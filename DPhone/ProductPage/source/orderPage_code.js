@@ -34,12 +34,18 @@ function renderPageListOrder() {
                     <div class="view__order__content__list__title-item">
                         <h4>Ngày đặt hàng</h4>
                         <p>${time.getDateTimeStr(item.orderTime)}</p>
-                    </div>
-                    <div class="view__order__content__list__title-item">
-                        <div class="view__order__content__list-action">${item.status === true ? "Đã xử lý" : "Chưa xử lý"}</div>
-                    </div>
-                </div>`
-        html += `<div class="view__order__content__list__body-box">`
+                    </div>`
+        if (item.status) {
+            html += `<div class="view__order__content__list__title-item">
+                        <div class="view__order__content__list-action" style="background-color: green">Đã xử lý</div>
+                    </div>`;
+        }
+        else html += `<div class="view__order__content__list__title-item">
+                        <div class="view__order__content__list-action">Chưa xử lý</div>
+                    </div>`
+                
+        html += `</div>
+            <div class="view__order__content__list__body-box">`;
         item.cartList.forEach(cartItem => {
             // console.log(cartItem);
             html += `    

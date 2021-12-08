@@ -30,7 +30,7 @@ const logOutBtn = document.querySelectorAll('.product__header__icon__log-out');
 logOutBtn.forEach(item => {
     item.addEventListener('click', function () {
         user.logout();
-        location.reload();
+        window.location.href = "../ProductPage/ProductPage.html";
     })
 })
 
