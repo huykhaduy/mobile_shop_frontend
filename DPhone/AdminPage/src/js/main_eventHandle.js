@@ -5,6 +5,7 @@ checkIsAdmin();
 //-----------------------MODAL THÔNG BÁO (MODAL ALERT)----------------------------
 //Hiện modal thông báo
 var myTimeOut;
+
 function addShowModalAlert(icon, title, message, color, obj) {
     if (obj === undefined) {
         clearTimeout(myTimeOut);

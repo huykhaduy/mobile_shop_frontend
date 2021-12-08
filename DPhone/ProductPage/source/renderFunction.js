@@ -175,7 +175,7 @@ function renderProductDetail(self) {
         htmlStr += `<span>(${(Math.floor(Math.random() * (50)) + 1)} Đã bán)</span>
                     </div>
                     <div class="product__modal__details__price">
-                        $${product.price} <span>$${product.price_old}</span>
+                        $${money.vnd(product.price)} <span>$${money.vnd(product.price_old)}</span>
                     </div>
                     <div class="product__modal__details__info">
                         <h4>RAM<span>${product.ram} GB</span></h4>
@@ -242,8 +242,7 @@ function renderProductDetail(self) {
             const userid = user.checkLoginId();
             const productId = parseInt(openModalDetails.getAttribute('value'));
             order.addBuyNowOrder(productId, parseInt(amout.textContent), null, userid, Date.now());
-
-            alert("Chuyển đến trang hóa đơn!");
+            window.location.href ="./ViewOrderPage.html";
         })
     })
     displayProductType(showChoice);
@@ -492,7 +491,7 @@ function renderFeaturedProduct() {
                         }
                     }		 
 		html +=		`</div>
-					<div class="product__content__featured__item__right__price">$${item.price} <span><s>$${item.price_old}</s></span></div>
+					<div class="product__content__featured__item__right__price">$${money.vnd(item.price)} <span><s>$${money.vnd(item.price_old)}</s></span></div>
 				</div>
 			</a>`;
     })
@@ -593,6 +592,7 @@ function clickToBuyModalCart() {
     const loginId = user.checkLoginId();
     order.makeOrder(cart.getCartList(loginId), loginId, Date.now());
     renderCartModal();
+    window.location.href ="./ViewOrderPage.html";
 }
 
 

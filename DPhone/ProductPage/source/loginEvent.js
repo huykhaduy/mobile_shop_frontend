@@ -16,9 +16,14 @@ else if (userId !== null) {
     }
 }
 
+const dphoneIconHome = document.querySelector('.product__header____logo');
+dphoneIconHome.addEventListener('click', function () {
+    window.location.href = "../ProductPage/ProductPage.html";
+})
+
 const orderViewBtn = document.querySelector('.product__header__icon__user');
 orderViewBtn.addEventListener('click', function () {
-    alert("Chuyển đến trang đơn hàng!");
+    window.location.href = "../ProductPage/ViewOrderPage.html";
 })
 
 const logOutBtn = document.querySelectorAll('.product__header__icon__log-out');
@@ -57,7 +62,7 @@ var myTime;
 loginBtnConfirm.addEventListener('click', function (e) {
     clearTimeout(myTime);
     if (user.isSameUserName(userNameLoginInput.value)) {
-        let result = user.login(userNameLoginInput.value, passwordLoginInput.value)
+        let result = user.login(userNameLoginInput.value, passwordLoginInput.value);
         if (result) {
             location.reload();
         }

@@ -39,6 +39,7 @@ class Order {
         this.userid = userid;
         // this.orderTime = Date.now();
         this.orderTime = time.toTimeSpan(orderTime);
+        this.userProfile = user.getUserId(userid);
         this.status = false;
     }
 }
@@ -423,14 +424,19 @@ class user {
             return false;
         }
         var isDeleted = false;
+        var name;
         list.forEach((myuser, i) => {
             if (myuser.userID === userid) {
                 list.splice(i, 1);
+                name = myuser.username;
                 if (user.loadUsers(list)) {
                     isDeleted = true;
                 }
             }
         })
+        if (isDeleted) {
+            history.addNode(Date.now(), "Người dùng " + name + " đã bị xóa");
+        }
         return isDeleted;
     }
     //Change info
@@ -492,7 +498,11 @@ class user {
             return null;
         }
         user.setLoginState(isUserid);
-        if (isUserid) return true;
+        if (isUserid) {
+            history.addNode(Date.now(), "Người dùng " + username + " đã đăng nhập!");
+            
+            return true;
+        }
         return false;
     }
 
@@ -712,6 +722,7 @@ class order{
         orderList.push(new Order(cartList, userid, orderTime));
         order.loadOrder(orderList);
         cart.removeAllItem(userid);
+        history.addNode(Date.now(), "Người dùng " + user.getUserId(userid).username + " đã đặt 1 đơn hàng!");
         return true;
     }
 
@@ -736,8 +747,9 @@ class order{
             myCart = new CartItem(productId, data.getProductId(productId).price, soluong, productColor, data.getProductId(productId).imgList[0]);
             var myCartList = [];
             myCartList.push(myCart);
-            orderList.push(new Order(myCartList, userid, time.getNowDate()));
+            orderList.push(new Order(myCartList, userid, Date.now()));
             order.loadOrder(orderList);
+            history.addNode(Date.now(), "Người dùng " + user.getUserId(userid).username + " đã đặt 1 đơn hàng!");
             return true;
         }
         catch (err) {
@@ -1016,7 +1028,7 @@ class history{
             return false;
         }
         var result = [];
-        for (var i = History.total; i >= 0 && numberItemShow>0; i--) {
+        for (var i = list.length-1; i >= 0 && numberItemShow>0; i--) {
             if (list[i]) {
                 numberItemShow--;
                 result.push(list[i]);

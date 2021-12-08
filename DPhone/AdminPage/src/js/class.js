@@ -41,6 +41,7 @@ class Order {
         this.cartList = cartList;
         this.userid = userid;
         // this.orderTime = Date.now();
+        this.userProfile = user.getUserId(userid);
         this.orderTime = time.toTimeSpan(orderTime);
         this.status = false;
     }
@@ -417,6 +418,7 @@ class user {
         const list = user.getUsers();
         list.push(newUser);
         user.loadUsers(list);
+        history.addNode(Date.now(), "Đã tạo tài khoản " + username + " thành công!");
     }
     //Change user id
     static removeUserId(userid) {
@@ -425,14 +427,19 @@ class user {
             return false;
         }
         var isDeleted = false;
+        var name;
         list.forEach((myuser, i) => {
             if (myuser.userID === userid) {
+                name = myuser.username;
                 list.splice(i, 1);
                 if (user.loadUsers(list)) {
+                   
                     isDeleted = true;
                 }
             }
         })
+        if (isDeleted)
+            history.addNode(Date.now(), "Người dùng " + name + " đã bị xóa");
         return isDeleted;
     }
     //Change info
@@ -500,7 +507,10 @@ class user {
             }
         })
         user.setLoginState(isUserid);
-        if (isUserid) return true;
+        if (isUserid) {
+            history.addNode(Date.now(), "Người dùng " + username + " đã đăng nhập!");
+            return true;
+        };
         return false;
     }
 
@@ -746,6 +756,7 @@ class order {
         orderList.push(new Order(cartList, userid, orderTime));
         order.loadOrder(orderList);
         cart.removeAllItem(userid);
+        history.addNode(Date.now(), "Người dùng " + user.getUserId(userid).username + " đã đặt 1 đơn hàng!");
         return true;
     }
 
@@ -772,6 +783,7 @@ class order {
             orderList.push(new Order(myCart, userid, time.getNowDate()));
     
             order.loadOrder(orderList);
+            history.addNode(Date.now(), "Người dùng " + user.getUserId(userid).username + " đã đặt 1 đơn hàng!");
             return true;
         }
         catch (err) {
@@ -883,6 +895,16 @@ class order {
             })
         })
         return total;
+    }
+
+    static getOrderOfUserId(userId) {
+        const orderList = order.getOrders();
+        if (!orderList || orderList.length === 0) return null;
+        var result = [];
+        orderList.forEach((item) => {
+            if (item.userid === userId) result.push(item);
+        })
+        return result;
     }
 }
 
@@ -1094,9 +1116,9 @@ class history {
     }
 
     static addNode(timeSpan, textShow) {
-        var list = [];
-        if (history.getList()) {
-            list = history.getList();
+        var list = history.getList();
+        if (!list) {
+            return null;
         }
         list.push(new History(timeSpan, textShow));
         history.loadHistory(list);
@@ -1121,7 +1143,7 @@ class history {
             return false;
         }
         var result = [];
-        for (var i = History.total; i >= 0 && numberItemShow > 0; i--) {
+        for (var i = list.length - 1; i >= 0 && numberItemShow > 0; i--) {
             if (list[i]) {
                 numberItemShow--;
                 result.push(list[i]);

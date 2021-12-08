@@ -1,3 +1,4 @@
+
 // Xử lí dropdown avatar
 var openDropdownAvt = document.querySelector('#openDropdownAvt')
 var dropdownAvt = document.querySelector('#dropdownAvt')

@@ -20,7 +20,7 @@ function renderOrder(list) {
                         <div class="order__header__quantity">${item.cartList.length} sản phẩm</div>
                     </div>
                     <div class="order__header__price"><h4>${money.vnd(order.getOrderIdMoney(item.orderId))}</h4> <p>Chưa Thanh Toán</p></div>
-                    <div class="order__header__username"><h4>Tên Người Dùng</h4><p>${user.getUserId(item.userid).username}</p></div>
+                    <div class="order__header__username"><h4>Tên Người Dùng</h4><p>${item.userProfile.username}</p></div>
                     <div class="order__header__date"><h4>Ngày Đặt Hàng</h4> <p>${time.getDateStr(item.orderTime)}</p></div>`
         if (item.status) {
             html += `<div class="order__header__state active">Đã xử lý</div>

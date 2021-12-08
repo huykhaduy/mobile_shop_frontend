@@ -361,8 +361,9 @@ function clickToRemoveUserModal(id) {
         if (id === user.checkLoginId()) throw "Không thể xóa tài khoản của chính bạn!";
         var name = user.getUserId(parseInt(id)).username;
         user.removeUserId(parseInt(id));
-        renderUser(user.getUsers());
         addShowModalAlert('fas fa-check-circle', 'Xóa thành công', 'Người dùng ' + name + ' đã bị xóa !', successColor);
+        renderUser(user.getUsers());
+        
     }
     catch (e) {
         addShowModalAlert('fas fa-times-circle', 'Xóa thất bại', e, errorColor);
