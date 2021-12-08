@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Link CSS -->
+ <link rel="stylesheet" href="./ProductPage.css">
+ <!-- Fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+ <title>Product Page</title>
+</head>
+<body>
+	<!----------------------------------------------------- Header STARTS  ----------------------------------------------------->
+ <!-- Header STARTS -->
+	<div class="product__header__container">
+		<div class="product__header__menu__box">
+			<div class="product__header____logo">
+				<img src="./img/logo-menu.png" alt="">PHONE
+			</div>
+			<div class="product__header__menu">
+				<ul>
+					<li><a href="#">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" trigger="loop" 
+					colors="primary:#1B9CFC,secondary:#7047ee" style="width: 25px">
+					</lord-icon>Trang Chủ</a></li>
+					<li><a href="#">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+						<lord-icon src="https://cdn.lordicon.com/gqzfzudq.json" trigger="loop" 
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width: 25px">
+						</lord-icon>Tính Năng</a></li>
+					<li><a href="#">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+						<lord-icon src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop" 
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width: 25px">
+						</lord-icon>Sản Phẩm</a></li>
+					<li><a href="#">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+						<lord-icon src="https://cdn.lordicon.com/slkvcfos.json" trigger="loop"
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width: 25px">
+						</lord-icon>Cửa Hàng</a></li>
+					<li><a href="#">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/hciqteio.json" trigger="loop" 
+					colors="primary:#1B9CFC,secondary:#7047ee" style="width: 25px">
+					</lord-icon>Liên hệ</a></li>
+				</ul>
+			</div>
+			<div class="product__header__icon__box">
+				<div class="product__header__icon__box__item product__header__icon__box__item__1">
+						<!-- <div class="product__header__sayhello">Xin chào, <span></span></div> -->
+						<div class="product__header__icon__user">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/dxjqoygy.json" trigger="loop" 
+							colors="primary:#7047ee,secondary:#7047ee"
+								style="width:50px">
+							</lord-icon>
+						</div> <!-- Đơn hàng -->
+						<div class="product__header__icon__cart">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/slkvcfos.json" trigger="loop" 
+							colors="primary:#1B9CFC,secondary:#1B9CFC"
+								style="width: 50px">
+							</lord-icon>
+						</div> <!-- Giỏ hàng -->
+						<div class="product__header__icon__log-out">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/udwhdpod.json" trigger="loop" 
+							colors="primary:#ff4757,secondary:#ff4757"
+								style="width:50px">
+							</lord-icon>
+						</div> <!-- Đăng xuất -->
+				</div>
+				<div class="product__header__icon__box__item product__header__icon__box__item__2">
+						<div class="product__header__icon__sign-in">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="loop" 
+							colors="primary:#0fbcf9,secondary:#0fbcf9"
+								style="width:50px">
+							</lord-icon>  <!-- Đăng nhập -->
+						</div>
+						<div class="product__header__icon__sign-up">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/mecwbjnp.json" trigger="loop" 
+							colors="primary:#ff3838,secondary:#ff3838"
+								style="width:50px">
+							</lord-icon>   <!-- Đăng kí -->
+						</div>
+				</div>
+				<div class="product__header__icon__box__item product__header__icon__box__item__3">
+						<div class="product__header__sayhello">Xin chào, <span></span></div>
+      					<div class="product__header__icon__admin"><i class="fas fa-user-shield"></i></div> <!-- Admin -->
+						<div class="product__header__icon__log-out">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/udwhdpod.json" trigger="loop" 
+							colors="primary:#ff4757,secondary:#ff4757"
+								style="width:50px">
+							</lord-icon>
+						</div> <!-- Đăng xuất -->
+				</div>
+				<div class="product__header__icon__box__item product__header__icon__box__item__5">
+					<div class="product__header__icon__search" id="icon-search">
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+						<lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+							colors="primary:#32ff7e,secondary:#32ff7e" style="width:50px; z-index: -1;">
+						</lord-icon>
+						<input type="text" placeholder="Search...(Enter để tìm)" class="search-input-header" id="input-search">
+					</div>
+				</div>
+				<div class="product__header__icon__box__item product__header__icon__box__item__4">
+					<div class="product__header__icon__bar"> 
+						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+						<lord-icon src="https://cdn.lordicon.com/uzrqzyei.json" trigger="loop" 
+						colors="primary:#fff200,secondary:#fff200"
+							style="width:50px">
+						</lord-icon><!-- Sidebar -->
+			  </div>
+			</div>
+		</div>
+	</div>
+	<!-- Header ENDS -->
+
+	<!-- Carousel STARTS -->
+	<!-- <div class="carousel-container">
+		<div class="carousel-slide">
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/abstract.jpg" />
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/animal.jpg" />
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/architecture.jpg" />
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/leaf.jpg" />
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/space.jpg" />
+			<img src="https://raw.githubusercontent.com/asbelljc/carousel-builder/main/sample/Images/twig.jpg" />
+		</div>
+	
+		<div class="carousel-prev"><i class="fas fa-arrow-left"></i></div>
+		<div class="carousel-next"><i class="fas fa-arrow-right"></i></div>
+		<ol class="carousel-dots">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div> -->
+	<!-- Carousel ENDS -->
+	
+
+	<!-- Menu sidebar STARTS -->
+	<div class="menu__sidebar__container">
+		<div class="menu__sidebar__close">
+			<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/wgwcqouc.json" trigger="loop" 
+			colors="primary:#7047ee,secondary:#7047ee"
+				style="width:100px">
+			</lord-icon>
+		</div>
+		<h3><img src="./img/logo-menu.png" alt="">PHONE</h3>
+		<ul>
+			<li><a href="#"><script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" trigger="loop" 
+			colors="primary:#1B9CFC,secondary:#7047ee"
+				style="width: 40px">
+			</lord-icon>Trang Chủ</a></li>
+			<li><a href="#"><script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/gqzfzudq.json" trigger="loop" 
+			colors="primary:#1B9CFC,secondary:#7047ee"
+				style="width: 40px">
+			</lord-icon>Tính Năng</a></li>
+			<li><a href="#"><script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop" 
+			colors="primary:#1B9CFC,secondary:#7047ee"
+				style="width: 40px">
+			</lord-icon>Sản Phẩm</a></li>
+			<li><a href="#"><script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/slkvcfos.json" trigger="loop" 
+			colors="primary:#1B9CFC,secondary:#7047ee"
+				style="width: 40px">
+			</lord-icon>Cửa Hàng</a></li>
+			<li><a href="#"><script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+			<lord-icon src="https://cdn.lordicon.com/hciqteio.json" trigger="loop" 
+			colors="primary:#1B9CFC,secondary:#7047ee"
+				style="width: 40px">
+			</lord-icon>Liên Hệ</a></li>
+		</ul>
+		<br><br>
+		<h3>CATAGORIES</h3>
+		<ul>
+			<li><a href="#">
+				<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+				<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop" 
+				colors="primary:#1B9CFC,secondary:#7047ee"
+					style="width:40px">
+				</lord-icon> Samsung</a>
+			</li>
+			<li><a href="#">
+				<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+				<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop" 
+				colors="primary:#1B9CFC,secondary:#7047ee"
+					style="width:40px">
+				</lord-icon>Xiaomi</a>
+			</li>
+			<li><a href="#">
+				<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+				<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop" 
+				colors="primary:#1B9CFC,secondary:#7047ee"
+					style="width:40px">
+				</lord-icon>Apple</a>
+			</li>
+			<li><a href="#">
+					<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop"
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width:40px">
+					</lord-icon>Vivo
+				</a>
+			</li>
+			<li><a href="#">
+					<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop"
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width:40px">
+					</lord-icon>Oppo
+				</a>
+			</li>
+			<li><a href="#">
+					<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/vaeagfzc.json" trigger="loop"
+						colors="primary:#1B9CFC,secondary:#7047ee" style="width:40px">
+					</lord-icon>Vsmart
+				</a>
+			</li>
+		
+		</ul>
+	</div>
+	<!-- Menu sidebar ENDS -->
+
+ <!-- Add To Cart STARTS -->
+	<div class="background__modal__box"></div>
+	<div class="product__modal__cart__container">
+		<div class="product__modal__cart__content__box">
+			<div class="product__modal__cart__title">
+				 <h3>GIỎ HÀNG CỦA BẠN</h3>
+					<div class="product__modal__cart__close">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/wgwcqouc.json" trigger="" 
+							colors="primary:#7047ee,secondary:#7047ee"
+								style="width:100px">
+							</lord-icon>
+					</div>
+			</div>
+			<div class="product__modal__cart__content">
+				<!-- Cart modal render by js -->
+			</div>
+		</div>
+	</div>
+	<!-- Add To Cart ENDS -->
+	<!----------------------------------------------------- Header ENDS  ----------------------------------------------------->
+
+	<!----------------------------------------------------- Content STARTS  ----------------------------------------------------->
+	<div class="product__content__container">
+		<!-- Filter STARTS -->
+		<div class="product__content__filter">
+			<!-- Lọc theo hãng -->
+			<div class="filter__sidebar__close">
+				<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+				<lord-icon src="https://cdn.lordicon.com/wgwcqouc.json" trigger="loop" 
+				colors="primary:#7047ee,secondary:#7047ee"
+					style="width:100px">
+				</lord-icon>
+			</div>
+			<div class="product__content__filter__catagories">
+				<h4 class="title__filter">THEO HÃNG</h4>
+				<ul>
+					<!-- <li><a href="#" class="product__name__brand__filter">Samsung <span class="title__brand__count">(20)</span></a></li>
+					<li><a href="#" class="product__name__brand__filter">Xiaomi <span class="title__brand__count">(20)</span></a></li>
+					<li><a href="#" class="product__name__brand__filter">Apple <span class="title__brand__count">(20)</span></a></li>
+					<li><a href="#" class="product__name__brand__filter">Vivo <span class="title__brand__count">(20)</span></a></li>
+					<li><a href="#" class="product__name__brand__filter">Oppo <span class="title__brand__count">(20)</span></a></li>
+					<li><a href="#" class="product__name__brand__filter">Vsmart <span class="title__brand__count">(20)</span></a></li> -->
+				</ul>
+			</div>
+   <!-- Lọc theo giá -->
+			<div class="product__content__filter__price">
+				<!-- <h4 class="title__filter">THEO GIÁ</h4>
+				<div class="product__content__filter__price__box">
+				<div class="product__content__filter__price__item filter__price__item__1">
+							<label for="price__1" class="radio__label">
+								<input id="price__1" name="price" type="radio" value="0,2500">
+								<p>DƯỚI $2500</p>
+								<span></span>
+							</label>
+				</div>
+				<div class="product__content__filter__price__item filter__price__item__2">
+							<label for="price__2" class="radio__label">
+								<input id="price__2" name="price" type="radio" value="2500,5000">
+								<p>TỪ $2500 TỚI $5000</p>
+								<span></span>
+							</label>
+				</div>
+				<div class="product__content__filter__price__item filter__price__item__3" value=3>
+							<label for="price__3" class="radio__label">
+								<input id="price__3" name="price" type="radio" value="5000,10000">
+								<p>TỪ $5000 TỚI $10000</p>
+								<span></span>
+							</label>
+				</div>
+				<div class="product__content__filter__price__item filter__price__item__4" value=4>
+							<label for="price__4" class="radio__label">
+								<input id="price__4" name="price" type="radio" value="10000,20000">
+								<p>TỪ $10000 TỚI $20000</p>
+								<span></span>
+							</label>
+				</div>
+				<div class="product__content__filter__price__item filter__price__item__5">
+							<label for="price__5" class="radio__label">
+      							<input id="price__5" name="price" type="radio" value="20000,1000000">
+      							<p>TRÊN $20000</p>
+      							<span></span>
+     							</label>
+		  		</div>
+			</div> -->
+		</div>
+   <!-- Lọc theo Ram -->
+			<div class="product__content__filter__ram">
+				<h4 class="title__filter">BỘ NHỚ RAM </h4>
+				<div class="product__content__filter__ram__box">
+					<div class="filter__ram filter__ram__1" value="2">2 GB</div>
+					<div class="filter__ram filter__ram__2" value="3">3 GB</div>
+					<div class="filter__ram filter__ram__3" value="4">4 GB</div>
+					<div class="filter__ram filter__ram__4" value="6">6 GB</div>
+					<div class="filter__ram filter__ram__5" value="8">8 GB</div>
+					<div class="filter__ram filter__ram__6" value="16">16 GB</div>
+				</div>
+			</div>
+			<!-- Lọc theo Rom -->
+			<div class="product__content__filter__rom">
+				<h4 class="title__filter">BỘ NHỚ ROM</h4>
+				<div class="product__content__filter__rom__box">
+						<div class="filter__rom filter__rom__1" value="16">16 GB</div>
+						<div class="filter__rom filter__rom__2" value="32">32 GB</div>
+						<div class="filter__rom filter__rom__3" value="64">64 GB</div>
+						<div class="filter__rom filter__rom__4" value="128">128 GB</div>
+						<div class="filter__rom filter__rom__5" value="256">256 GB</div>
+						<div class="filter__rom filter__rom__6" value="512">512 GB</div>
+				</div>
+			</div>
+			<!-- Nút Reset -->
+			<div class="product__content__filter__reset__btn">RESET</div>
+
+		<!-- Featured STARTS -->
+		<div class="product__content__featured">
+			<!-- Product feature list -->
+		</div>
+		<!-- Featured ENDS -->
+	</div>
+	<!-- Filter ENDS -->
+
+	<!-- Product STARTS -->
+	<div class="product__content">
+		<div class="product__content__image">
+			<img src="./img/qc.png" alt="">
+		</div>
+		<div class="product__content__view__cart">
+    <p><i class="fas fa-check-circle"></i>Thanh toán ngay để nhận thêm ưu đãi từ ngày <span>11/13/2021</span>.</p>
+				<div class="product__content__view__cart__btn">
+					XEM HÓA ĐƠN <i class="fas fa-arrow-right"></i>
+				</div>
+		</div>
+		<div class="product__content__display__group">
+			<div class="open__filter__mobile__screen"><i class="fas fa-sliders-h"></i></div>
+			<div class="product__content__display__item display__item__block active"><i class="fas fa-th-large"></i></div>
+			<div class="product__content__display__item display__item__inline"><i class="fas fa-list"></i></div>
+			<p class="product__page__txt__info"></p>
+			<div class="select__sort__group">
+				 <div class="selector">
+						<div class="selectField"><p>Sắp Xếp Theo Giá</p>
+							<i class="fas fa-chevron-down"></i></div>
+					</div>
+					<ul class="list__option hide">
+						<li class="option optionIncrease">Từ thấp đến cao</li>
+						<li class="option optionDecrease">Từ cao đến thấp</li>
+					</ul>
+			</div>
+		</div>
+				<!-- Display item table -->
+				<div class="product__item__box"></div>
+
+				<!-- Paging STARTS -->
+		<div class="product__content__paging">
+			<div class="product__content__paging__prev active"><i class="fas fa-arrow-left"></i></div>
+			<div class="paging__item__box">
+				<!-- Paging render by js -->
+			</div>
+			<div class="product__content__paging__next"><i class="fas fa-arrow-right"></i></div>
+		</div>
+		<!-- Paging ENDS -->
+		</div>
+	</div>
+	<!-- Product ENDS -->
+	<!----------------------------------------------------- Content ENDS  ----------------------------------------------------->
+<!-- Modal box Product STARTS -->
+<div class="product__modal__details">
+	<!-- Modal box detail render by js -->
+</div>
+<!-- Modal box Product ENDS -->
+
+<!-- Thông báo ngọt ngào -->
+<div class="modal__notification__sweet hide">
+	<div class="modal__notification__sweet__content">
+		<!-- <div class="modal__notification__sweet__content__left"><i class="fas fa-check-circle"></i></div>
+		<div class="modal__notification__sweet__content__right">
+			<h4>Thêm Thành Công</h4>
+			<p>Sản phẩm đã được thêm vào giỏ</p>
+		</div> -->
+	</div>
+</div>
+	<!----------------------------------------------------- Footer STARTS  ----------------------------------------------------->
+	<div class="product__footer__container">
+		<div class="product__footer__content">
+			<div class="product__footer__content__send__email">
+				<h4>NHẬN ƯU ĐÃI</h4>
+				<input type="email" placeholder="Email...">
+				<div class="product__footer__content__sign__up">GỬI EMAIL</div>
+			</div>
+			<div class="product__footer__content__list__info product__footer__content__list__info__1">
+				<p><a href="#"><i class="far fa-dot-circle"></i>Tài khoản của bạn</a></p>
+				<p><a href="#"><i class="far fa-dot-circle"></i>Chính sách ưu đãi</a></p>
+				<p><a href="#"><i class="far fa-dot-circle"></i>Cửa hàng</a></p>
+				<p><a href="#"><i class="far fa-dot-circle"></i>Cập nhật tin tức</a></p>
+			</div>
+			<div class="product__footer__content__list__info product__footer__content__list__info__2">
+				<p><a href="#"><i class="far fa-dot-circle"></i>Liên hệ</a></p>
+				<p><a href="#"><i class="far fa-dot-circle"></i>Câu hỏi thường gặp</a></p>
+				<p><a href="#"><i class="far fa-dot-circle"></i>Điều khoản sử dụng</a></p>
+			</div>
+			<div class="product__footer__content__address">
+				<h4>Đại Học Sài Gòn - 273 An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh. <br>
+				Khoa CNTT K20
+				</h4>
+				<div class="product__footer__content__address__icon">
+					<a href="#" class="product__footer__content__address__icon__item address__icon__item__fb"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="product__footer__content__address__icon__item address__icon__item__tw"><i class="fab fa-twitter"></i></a>
+					<a href="#" class="product__footer__content__address__icon__item address__icon__item__gg"><i class="fab fa-google-plus-g"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="product__footer__end">Tạo bởi DPhone Team 2021, cảm ơn bạn đã ghé thăm <i class="fas fa-heart"></i></div>
+	</div>
+	<!----------------------------------------------------- Footer ENDS  ----------------------------------------------------->
+
+
+	<!-- Login Form -->
+  <div class="login-form__container">
+			<div class="login-form__content">
+				<div class="login-form-content-left">
+					<div class="login-form-content-left-icon"><i class="fas fa-sign-in-alt"></i></div>
+					<h1>Đăng Nhập<span>DPhone</span></h1>
+					<p>Chào mừng đến với DPHONE</p>
+				</div>
+				<div class="login-form-content-right">
+					<div class="close-login-form">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/wgwcqouc.json" trigger="hover" 
+							colors="primary:#7047ee,secondary:#7047ee"
+								style="width:100px">
+							</lord-icon>
+					</div>
+					<h1>Đăng Nhập</h1>
+					<p>Đăng nhập để mua sắm tại DPhone</p>
+					<div class="login-form-input-item">
+      					<label for="username-login">Tên người dùng</label>
+						<input type="text" id="username-login" placeholder="Nhập vào tên người dùng..." autocomplete="off">
+						<span class="err-message-login err-message-username">Tên người dùng không đúng, vui lòng nhập lại!</span>
+					</div>
+					<div class="login-form-input-item">
+						<label for="password-login">Mật khẩu</label>
+						<input type="password" id="password-login" placeholder="Nhập vào mật khẩu..." autocomplete="off">
+						<span class="err-message-login err-message-password">Mật khẩu không đúng, vui lòng nhập lại!</span>
+					</div>
+					<div class="login-form-continue-btn">TIẾP TỤC<i class="fas fa-arrow-circle-right"></i></div>
+					<p>Bạn chưa có tài khoản? <a href="#">Đăng kí ngay!</a></p>
+					<div class="login-other-btn-group">
+						<div class="login-other-btn-item login-google-btn"><i class="fab fa-google-plus-g"></i>Đăng Nhập Với Google +</div>
+						<div class="login-other-btn-item login-facebook-btn"><i class="fab fa-facebook-f"></i>Đăng Nhập Với Facebook</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- Login Form -->
+</body>
+<!-- Link JS -->
+<script src="./source/class.js"></script>
+<script src="./source/randomOrder.js"></script>
+<script src="./source/data.js"></script>
+<script src="./source/renderFunction.js"></script>
+<script src="./source/main.js"></script>
+<script src="./source/loginEvent.js"></script>
+<script src="./source/searchAndFilter.js"></script>
+<script src="./source/carousel.js"></script>
+</html>
+
+<!-- link: https://elementor3.thembay.com/puca/shop/?swoof=1&q=/puca/shop/&min_price=10&max_price=405 -->

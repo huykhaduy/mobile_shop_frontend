@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Fontawesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+ <!-- Chart JS -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+ <!-- Link CSS -->
+ <link rel="stylesheet" href="./Admin.css">
+ <title>Admin</title>
+
+</head>
+<body id="body">
+ <div class="admin__container">
+  <div class="admin__content">
+   <div class="admin__content__left">
+    <div class="admin__content__left__menu">
+     <div class="admin__content__left__menu__logo">
+       <img src="./admin_img/admin-logo-menu.png" alt="">
+       <p>D PHONE</p>
+     </div>
+
+     <div class="admin__content__left__menu__avatar">
+      <div class="admin__content__left__menu__avatar__left">
+       <img src="./admin_img/admin-avatar-header.png" alt="">
+      </div>
+      <div class="admin__content__left__menu__avatar__right">
+       <div class="admin__content__left__menu__avatar__right__info">
+        <h4></h4>
+        <p style="text-align: center;line-height:40px">Admin</p>
+       </div>
+       <div class="admin__content__left__menu__avatar__open__dropdown">
+         <div class="avatar__open__dropdown" id="openDropdownAvt">
+          <i class="fas fa-caret-down"></i>
+         </div>
+        <div class="admin__content__left__menu__avatar__dropdown" id="dropdownAvt">
+          <ul>
+           <li><a href="#"><i class="far fa-user"></i>Hồ sơ</a></li>
+           <li onclick="adminLogout()"><a href="#"><i class="fas fa-lock"></i>Đăng xuất</a></li>
+          </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     
+     <div class="admin__content__left__main__menu__container">
+      <h4 class="admin__content__left__main__menu__title">Menu Chính</h4>
+      <div class="admin__content__left__main__menu">
+       <ul>
+        <li><a class="active" href="#"><i class="fas fa-th-large active"></i><span>Điều Khiển</span></a></li>
+        <li><a href="#"><i class="fas fa-chart-pie"></i><span>Thống Kê</span></a></li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Đơn Hàng</span></a></li>
+        <li><a href="#"><i class="fab fa-xbox"></i><span>Quản Lý Sản Phẩm</span></a></li>
+        <li><a href="#"><i class="fas fa-user-circle"></i><span>Quản Lý Người Dùng</span></a></li>
+        <li><a href="#"><i class="fas fa-user-plus"></i><span>Liên Hệ</span></a></li>
+       </ul>
+      </div>
+     </div>
+
+     <div class="admin__content__left__menu__view__full" onclick="toProductPage()">
+       <!-- <div class="admin__content__left__menu__view__full__img">
+         <img src="./admin_img/LandingPage_Flatline.svg" alt="">
+       </div> -->
+       <div class="admin__content__left__menu__view__full__text">
+         <a href="#">Trở về trang sản phẩm <i class="fas fa-arrow-right"></i></a>
+       </div>
+     </div>
+
+     <div class="admin__content__left__ends">
+       <h4>DPhone Mobile</h4>
+       <p>Tạo bởi DPhone Team 2021</p>
+     </div>
+    </div>
+   </div>
+   <div class="admin__content__right">
+     <div class="admin__content__right__header">
+       <div class="open__menu__left__content">
+        <i class="fas fa-bars"></i>
+       </div>
+       <div class="admin__content__right__header__search__box">
+        <input type="text" placeholder="Tìm Kiếm...">
+        <div class="admin__content__right__header__search__icon"><i class="fas fa-search"></i></div>
+       </div>
+       <div class="admin__content__right__header__icon__group">
+         <div class="admin__content__right__header__icon__notification admin__content__right__header__icon">
+          <div id="openNotificationModal"><i class="fas fa-bell"></i></div>
+          <div class="header__icon__notification__modalbox" id="notificationModal">
+            <div class="header__icon__notification__modalbox__header">
+              Thông báo <span>Đóng</span>
+            </div>
+            <div class="header__icon__notification__modalbox__content">
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-users"></i> 
+                Xin chào thế giới
+              </div>
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-exclamation-triangle"></i>
+                Websties thực hiện bởi SGU K20
+              </div>
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-users"></i> 
+                Môn lập trình web 1
+              </div>
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-shopping-cart"></i>
+                Ước gì thầy cho 10 điểm
+              </div>
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-user"></i>
+                Chạy deadline sắp mặt luôn huhu
+              </div>
+              <div class="header__icon__notification__modalbox__content__item">
+                <i class="fas fa-user"></i>
+                Nhật kí viết lúc 11:09 5/12/2021
+              </div>
+              <div class="header__icon__notification__view__all">View All</div>
+            </div>
+          </div>
+         </div>
+         <div class="admin__content__right__header__icon__action admin__content__right__header__icon">
+          <i class="fas fa-cog"></i>
+        </div>
+        <div class="admin__content__right__header__icon__languages admin__content__right__header__icon">
+         <div id="openModalLanguages">
+          <i class="fas fa-globe-americas"></i>
+         </div>
+         <div class="admin__content__right__header__icon__languages__dropdown" id="modalLanguages">
+           <div class="header__icon__languages__dropdown__item">
+            <div class="header__icon__languages__dropdown__img">
+              <img src="./admin_img/laguage-flag-english.png" alt="">
+            </div>
+            <div class="header__icon__languages__dropdown__name">English</div>
+           </div>
+           <div class="header__icon__languages__dropdown__item">
+            <div class="header__icon__languages__dropdown__img">
+              <img src="./admin_img/laguage-flag-german.png" alt="">
+            </div>
+            <div class="header__icon__languages__dropdown__name">German</div>
+           </div>
+           <div class="header__icon__languages__dropdown__item">
+            <div class="header__icon__languages__dropdown__img">
+              <img src="./admin_img/laguage-flag-spanish.png" alt="">
+            </div>
+            <div class="header__icon__languages__dropdown__name">Spanish</div>
+           </div>
+           <div class="header__icon__languages__dropdown__item">
+            <div class="header__icon__languages__dropdown__img">
+              <img src="./admin_img/laguage-flag-vietnamese.png" alt="">
+            </div>
+            <div class="header__icon__languages__dropdown__name">Vietnamese</div>
+           </div>
+         </div>
+        </div>
+        <div class="header__admin__info__group">
+          <div class="header__admin__info">
+            <h4></h4>
+            <p>Admin</p>
+          </div>
+          <div class="header__admin__info__avatar">
+            <img src="./admin_img/admin-avatar-header.png" alt="">
+          </div>
+        </div>
+       </div>
+     </div>
+     <!-- Setting Modal -->
+        <div class="header__icon__action__modalbox">
+          <div class="icon__action__modalbox__header">
+            <div class="icon__action__modalbox__header__quick-action">
+              <h4>Quick Actions</h4>
+              <div class="header__quick-action__tasks">
+                23 tasks pending
+              </div>
+            </div>
+            <div class="icon__action__modalbox__close"><i class="fas fa-times"></i></div>
+          </div>
+          <div class="icon__action__modalbox__content">
+            <div class="icon__action__modalbox__content__item__box">
+              <div class="icon__action__modalbox__content__item">
+                <i class="fas fa-euro-sign"></i> <span>Accounting</span>
+              </div>
+              <div class="icon__action__modalbox__content__item">
+                <i class="fas fa-paper-plane"></i> <span>Member</span>
+              </div>
+            </div>
+            <div class="icon__action__modalbox__content__item__box">
+              <div class="icon__action__modalbox__content__item">
+                <i class="fab fa-xbox"></i> <span>Projects</span>
+              </div>
+              <div class="icon__action__modalbox__content__item">
+                <i class="fas fa-user-friends"></i> <span>Member</span>
+              </div>
+            </div>
+            <div class="icon__action__modalbox__content__item__box">
+              <div class="icon__action__modalbox__content__item">
+                <i class="far fa-chart-bar"></i> <span>Email</span>
+              </div>
+              <div class="icon__action__modalbox__content__item">
+                <i class="fas fa-comments-dollar"></i> <span>Orders</span>
+              </div>
+            </div>
+          </div>
+        </div>
+     <!-- Setting Modal -->
+
+     <!-- Admin Info Modal -->
+     <div class="header__admin__info__modalbox">
+       <div class="header__admin__info__modalbox__header">
+         <div class="admin__info__modalbox__header__profile">
+           <h3>Hồ Sơ<span>(12 tin nhắn)</span></h3>
+         </div>
+         <div class="admin__info__modalbox__header__close">
+          <i class="fas fa-times"></i>
+         </div>
+       </div>
+       <div class="header__admin__info__modalbox__avatar">
+         <div class="admin__info__modalbox__avatar__img">
+           <img src="./admin_img/admin-avatar-header-modal.png" alt="">
+         </div>
+         <div class="admin__info__modalbox__avatar__info">
+           <h4></h4>
+           <p>Quản trị viên</p>
+           <h5><i class="fas fa-reply-all"></i><span>dummy@gmail.com</span></h5>
+           <div class="admin__info__modalbox__avatar__follow__btn">
+            <i class="fas fa-plus"></i>Chi tiết
+           </div>
+         </div>
+       </div>
+       <div class="admin__info__modalbox__avatar__content">
+         <div class="modalbox__avatar__content__item">
+           <div class="modalbox__avatar__content__item__left">
+            <i class="fas fa-bookmark"></i>
+           </div>
+           <div class="modalbox__avatar__content__item__right">
+             <h4>Hồ sơ của tôi</h4>
+             <p>Thiết lập hồ sơ của bạn</p>
+           </div>
+         </div>
+         <div class="modalbox__avatar__content__item">
+          <div class="modalbox__avatar__content__item__left">
+            <i class="fab fa-rocketchat"></i>
+          </div>
+          <div class="modalbox__avatar__content__item__right">
+            <h4>Tin nhắn</h4>
+            <p>Hộp thư từ khách hàng</p>
+          </div>
+        </div>
+        <div class="modalbox__avatar__content__item">
+          <div class="modalbox__avatar__content__item__left">
+            <i class="fas fa-edit"></i> 
+          </div>
+          <div class="modalbox__avatar__content__item__right">
+            <h4>Hoạt động</h4>
+            <p>Thông tin về hành động</p>
+          </div>
+        </div>
+        <div class="modalbox__avatar__content__item">
+          <div class="modalbox__avatar__content__item__left">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div class="modalbox__avatar__content__item__right">
+            <h4>Nhiệm vụ</h4>
+            <p>Các nhiệm vụ cần thực hiện</p>
+          </div>
+        </div>
+       </div>
+
+       <div class="admin__info__modalbox__avatar__time">
+         <div class="modalbox__avatar__time__item">
+          <div class="modalbox__avatar__time__item__left">10:10</div>
+          <div class="modalbox__avatar__time__item__right">
+            Ngày giờ hiện tại
+            <p></p>GMT+7<br> (Ho Chi Minh City)</p>
+          </div>
+         </div>
+       </div>
+     </div>
+     <!-- Admin Info Modal -->
+
+     <!-- Content Right Main STARTS -->
+      <div class="dashboard__container section_right active">
+        <div class="content__right__main__left">
+          <!-- Statistics STARTS -->
+          <div class="content__right__main__left__statistics">
+            <div class="content__right__main__left__statistics__item">
+              <div class="statistics__item__number"><span>52</span></div>
+              <div class="statistics__item__text">Sản Phẩm Đang Bán</div>
+              <div class="statistics__item__percent"><i class="fas fa-arrow-up"></i>1.8%</div>
+            </div>
+            <div class="content__right__main__left__statistics__item">
+              <div class="statistics__item__number"><span>12</span></div>
+              <div class="statistics__item__text">Đơn Hàng Đã Đặt</div>
+              <div class="statistics__item__percent"><i class="fas fa-arrow-up"></i>1.8%</div>
+            </div>
+            <div class="content__right__main__left__statistics__item">
+              <div class="statistics__item__number"><i class="fas fa-dollar-sign"></i><span>7745</span></div>
+              <div class="statistics__item__text">Tổng Doanh Thu</div>
+              <div class="statistics__item__percent"><i class="fas fa-arrow-up"></i>1.8%</div>
+            </div>
+          </div>
+          <div class="content__dashboard__main__wrapper">
+            <div class="content__dashboard__main__title">
+              <i class="fas fa-cloud-download-alt"></i>
+              Sao lưu dữ liệu về máy
+            </div>
+            <div class="content__dashboard__file__box">
+              <div class="content__dashboard__file__box__item">
+                <div class="content__dashboard__file__box__title">
+                  <p><i class="fas fa-save"></i> Lưu dữ liệu của sản phẩm </p>
+                  <div class="content__dashboard__file__box__description">
+                    Chọn file để lưu dữ liệu sản phẩm
+                  </div>
+                </div>
+                <div class="content__dashboard__file__download" onclick="saveProductButton(getContentProductFromStorage())">
+                  Lưu ngay <i class="fas fa-arrow-circle-down"></i>
+                </div>
+              </div>
+              <div class="content__dashboard__file__box__item">
+                <div class="content__dashboard__file__box__title">
+                  <p><i class="fas fa-save"></i> Lưu dữ liệu của người dùng và giỏ hàng</p>
+                  <div class="content__dashboard__file__box__description">
+                    Chọn file để lưu dữ liệu người dùng và giỏ hàng
+                  </div>
+                </div>
+                <div class="content__dashboard__file__download" onclick="saveProductButton(getContentUserFromStorage())">
+                  Lưu ngay <i class="fas fa-arrow-circle-down"></i>
+                </div>
+              </div>
+              <div class="content__dashboard__file__box__item">
+                <div class="content__dashboard__file__box__title">
+                  <p><i class="fas fa-save"></i> Lưu dữ liệu đơn hàng</p>
+                  <div class="content__dashboard__file__box__description" >
+                    Chọn file để lưu dữ liệu đơn hàng
+                  </div>
+                </div>
+                <div class="content__dashboard__file__download" onclick="saveProductButton(getContentOrderFromStorage())">
+                  Lưu ngay <i class="fas fa-arrow-circle-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Statistics ENDS -->
+        </div>
+        <div class="content__right__main__right">
+          <div class="recent__activity__container">
+            <div class="recent__activity__title">Hoạt Động Gần Đây</div>
+            <div class="recent__activity__content">
+            </div>
+          </div>
+        </div>
+      </div>
+     <!-- Content Right Main ENDS -->
+
+     <!-- Trang Thống Kê Doanh Thu STARTS -->
+     <div class="statistical__container section_right">
+       <!-- Doughtnut Chart Group STARTS -->
+       <div class="statistical__doughnut-chart__group">
+         <div class="statistical__doughnut-chart__item">
+           <div class="statistical__doughnut-chart__item__left">
+             <div class="doughnut-chart__item__left__icon doughnut-chart__item__left__icon-1"><i class="fas fa-trophy"></i></div>
+             <div class="doughnut-chart__item__left__icon__text">
+               Đơn Hàng <p>0 Đơn hàng</p>
+             </div>
+           </div>
+           <div class="statistical__doughnut-chart__item__right">
+            <div class="statistical__doughnut-chart__item__right__content" style="position: relative; width:60%">
+              <div class="doughnut-chart__item__right__content__text doughnut-chart__item__right__content__text-1">
+                Có <p>0</p>
+              </div>
+              <canvas id="myDoughnutChart_1" style="z-index:100"></canvas>
+            </div>
+           </div>
+         </div>
+
+         <div class="statistical__doughnut-chart__item">
+          <div class="statistical__doughnut-chart__item__left">
+            <div class="doughnut-chart__item__left__icon doughnut-chart__item__left__icon-2"><i class="fab fa-xbox"></i></div>
+            <div class="doughnut-chart__item__left__icon__text">
+              Sản Phẩm <p>0 Sản phẩm</p>
+            </div>
+          </div>
+          <div class="statistical__doughnut-chart__item__right">
+            <div class="statistical__doughnut-chart__item__right__content" style="position: relative; width:60%">
+              <div class="doughnut-chart__item__right__content__text doughnut-chart__item__right__content__text-2">
+                Có <p>0</p>
+              </div>
+              <canvas id="myDoughnutChart_2" style="z-index:100"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="statistical__doughnut-chart__item">
+          <div class="statistical__doughnut-chart__item__left">
+            <div class="doughnut-chart__item__left__icon doughnut-chart__item__left__icon-3"><i class="fas fa-money-check-alt"></i></div>
+            <div class="doughnut-chart__item__left__icon__text">
+              Doanh Thu <p>0 %</p>
+            </div>
+          </div>
+          <div class="statistical__doughnut-chart__item__right">
+            <div class="statistical__doughnut-chart__item__right__content" style="position: relative; width:60%">
+              <div class="doughnut-chart__item__right__content__text doughnut-chart__item__right__content__text-3">
+                Chiếm <p>0</p>
+              </div>
+              <canvas id="myDoughnutChart_3" style="z-index:100"></canvas>
+            </div>
+          </div>
+        </div>
+       </div>
+       <!-- Doughtnut Chart Group ENDS -->
+
+       <!-- Filter Statistical STARTS -->
+       <div class="filter__statistical">
+         <div class="filter__statistical__item filter__statistical__item-1">
+          <label for="brand-select">Chọn Hãng Sản Phẩm</label>
+          <select name="" id="product-type-select" class="form-control product-select">
+            <option value="samsung">Samsung</option>
+            <option value="xiaomi">Xiaomi</option>
+            <option value="aple">Apple</option>
+            <option value="oppo">Oppo</option>
+            <option value="vivo">Vivo</option>
+            <option value="vsmart">Vsmart</option>
+          </select>
+          </div>
+         <div class="filter__statistical__item filter__statistical__item-2">
+          <label for="start-day">Chọn Khoảng Thời Gian</label>
+          <select name="" id="product-month-select" class="form-control product-select">
+            <option value="t1">Tháng 1</option>
+            <option value="t2">Tháng 2</option>
+            <option value="t3">Tháng 3</option>
+            <option value="t4">Tháng 4</option>
+            <option value="t5">Tháng 5</option>
+            <option value="t6">Tháng 6</option>
+            <option value="t7">Tháng 7</option>
+            <option value="t8">Tháng 8</option>
+            <option value="t9">Tháng 9</option>
+            <option value="t10">Tháng 10</option>
+            <option value="t11">Tháng 11</option>
+            <option value="t12">Tháng 12</option>
+          </select>
+          </div>
+       </div>
+       <!-- Filter Statistical ENDS -->
+
+       <!-- Bar Chart STARTS -->
+       <div class="content__right__main__left__chart" style="position: relative; height: 400px; width:100%">
+        <div class="content__right__main__left__chart__title">Phân Tích Doanh Thu (VNĐ/Ngày)</div>
+        <canvas id="myChart"></canvas>
+      </div>
+      <!-- Bar Chart ENDS -->
+     </div>
+     <!-- Trang Thống Kê Doanh Thu ENDS -->
+
+     <!-- Trang đơn hàng STARTS -->
+     <div class="order__container section_right">
+       <div class="order__statistics">
+        <div class="filter__statistical__item filter__statistical__item-2">
+          <label for="start-day">Chọn Khoảng Thời Gian</label>
+          <select name="" id="product-select" class="form-control product-select">
+            <option value="t1">Tháng 1</option>
+            <option value="t2">Tháng 2</option>
+            <option value="t3">Tháng 3</option>
+            <option value="t4">Tháng 4</option>
+            <option value="t5">Tháng 5</option>
+            <option value="t6">Tháng 6</option>
+            <option value="t7">Tháng 7</option>
+            <option value="t8">Tháng 8</option>
+            <option value="t9">Tháng 9</option>
+            <option value="t10">Tháng 10</option>
+            <option value="t11">Tháng 11</option>
+            <option value="t12">Tháng 12</option>
+          </select>
+        </div>
+         <div class="order__statistics__item order__statistics__item-1">
+           <div class="order__statistics__item__left">
+             <div class="order__statistics__item__left__number order__statistics__item__left__number__1">0</div>
+             <div class="order__statistics__item__left__text">Đã bán</div>
+           </div>
+           <div class="order__statistics__item__right">
+             <div class="order__statistics__item__right__icon order__statistics__item__right__icon-1">
+               <i class="fas fa-truck"></i>
+             </div>
+           </div>
+         </div>
+        <div class="order__statistics__item order__statistics__item-2">
+          <div class="order__statistics__item__left">
+            <div class="order__statistics__item__left__number order__statistics__item__left__number__2">0</div>
+            <div class="order__statistics__item__left__text">Đã xử lý</div>
+          </div>
+          <div class="order__statistics__item__right">
+            <div class="order__statistics__item__right__icon order__statistics__item__right__icon-2">
+             <i class="fas fa-bolt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="order__statistics__item order__statistics__item-3">
+          <div class="order__statistics__item__left">
+            <div class="order__statistics__item__left__number order__statistics__item__left__number__3">0</div>
+            <div class="order__statistics__item__left__text">Chưa xử lý</div>
+          </div>
+          <div class="order__statistics__item__right">
+            <div class="order__statistics__item__right__icon order__statistics__item__right__icon-3">
+             <i class="fas fa-shopping-cart"></i>
+            </div>
+          </div>
+        </div>
+       </div>
+
+       <div class="onder__handle">
+         <div class="onder__handle__title">Các đơn hàng</div>
+         <div class="onder__handle__content">
+           
+           <!-- <div class="onder__handle__content__item">
+             <div class="onder__handle__content__item__header">
+               <div class="order__header__dropdown"><i class="fas fa-chevron-down"></i></div>
+               <div class="order__header__image__product"><img src="./admin_img/icon-order.png" alt=""></div>
+               <div class="order__header__name">
+                 <h4>Order <span>#321</span></h4>
+                 <div class="order__header__quantity">3 product</div>
+               </div>
+               <div class="order__header__price"><h4>350$</h4> <p>Unpaid</p></div>
+               <div class="order__header__username">duyhuynh123</div>
+               <div class="order__header__state">Handled</div>
+               <div class="order__header__action"><span class="order__header__action__button"></span></div>
+             </div>
+             <div class="onder__handle__content__item__body">
+                <div class="order__body__item">
+                  <div class="order__body__image__product"><img src="./admin_img/product-order.jpg" alt=""></div>
+                  <div class="order__body__name">Vsmart Active 3 6/128 GB</div>
+                  <div class="order__body__price">$270</div>
+                  <div class="order__body__quantity">1</div>
+                  <div class="order__body__total-price">$270</div>
+                </div>
+                <div class="order__body__item">
+                  <div class="order__body__image__product"><img src="./admin_img/product-order.jpg" alt=""></div>
+                  <div class="order__body__name">Vsmart Active 3 6/128 GB</div>
+                  <div class="order__body__price">$270</div>
+                  <div class="order__body__quantity">1</div>
+                  <div class="order__body__total-price">$270</div>
+                </div>
+                <div class="order__body__item">
+                  <div class="order__body__image__product"><img src="./admin_img/product-order.jpg" alt=""></div>
+                  <div class="order__body__name">Vsmart Active 3 6/128 GB</div>
+                  <div class="order__body__price">$270</div>
+                  <div class="order__body__quantity">1</div>
+                  <div class="order__body__total-price">$270</div>
+                </div>
+             </div>
+           </div> -->
+         </div>
+       </div>
+     </div>
+     <!-- Trang đơn hàng ENDS -->
+
+     <!-- Trang thêm sửa xóa STARTS -->
+     <div class="crud__container section_right">
+       <div class="crud__container__header">
+         <div class="crud__container__header__show-item">
+          <div class="crud__container__header__text">Hiển Thị</div>
+          <select class="crud__container__header__show-item__select" required="required">
+            <option value=10>10</option>
+            <option value=25>25</option>
+            <option value=50>50</option>
+            <option value=100>100</option>
+          </select>
+          <div class="crud__container__header__text">Sản Phẩm</div>
+         </div>
+         <div class="crud__add__search__group">
+          <div class="crud__container__header__addProduct" onclick="addBtnAction()">
+            <i class="fas fa-plus-square"></i>Thêm Sản Phẩm
+          </div>
+          <div class="crud__container__header__search__box">
+            <div class="crud__container__header__text">Tìm Kiếm</div>
+            <input type="text" placeholder="Tìm kiếm sản phẩm...">
+          </div>
+         </div>
+       </div>
+       <div class="crud__container__body">
+         
+         <table class="crud__container__table">
+           <thead>
+             <tr>
+              <th>Ảnh</th>
+              <th>ID</th>
+              <th>Tên Sản Phẩm</th>
+              <th>Ram/Rom</th>
+              <th>Hãng</th>
+              <th>Giá Niêm Yết</th>
+              <th>Giá Bán</th>
+              <th>Thao Tác</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td><img src="./admin_img/product-order.jpg" alt=""></td>
+               <td>#41-4155</td>
+               <td>I Phone 13 Pro Max</td>
+               <td>8/128 GB</td>
+               <td>Apple</td>
+               <td>2500$</td>
+               <td>2350$</td>
+               <td>
+                 <div class="crud__action__btn__group">
+                   <div class="crud__action__btn crud__action__btn-add"><i class="fas fa-plus-circle"></i></div>
+                   <div class="crud__action__btn crud__action__btn-edit"><i class="fas fa-edit"></i></div>
+                   <div class="crud__action__btn crud__action__btn-remove"><i class="fas fa-trash-alt"></i></div>
+                 </div>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+         
+        
+       </div>
+        <div class="crud__pagination">
+          <!-- <div class="crud__pagination__item crud__pagination__item-prev"><i class="fas fa-arrow-left"></i></div>
+          <div class="crud__pagination__item">1</div>
+          <div class="crud__pagination__item">2</div>
+          <div class="crud__pagination__item">3</div>
+          <div class="crud__pagination__item crud__pagination__item-next"><i class="fas fa-arrow-right"></i></div> -->
+        </div>
+     </div>
+     <!-- Trang thêm sửa xóa ENDS -->
+
+     <!-- Modal trang thêm sửa xóa STARTS -->
+     <!-- Modal delete -->
+     <div class="modal__crud__delete"> 
+       <div class="modal__crud__delete-close" onclick="closeCURDRemovelModal()"><i class="far fa-times-circle"></i></div>
+       <div class="modal__crud__delete__icon"><i class="far fa-trash-alt"></i></div>
+       <div class="modal__crud__delete__title">
+         You are about to delete a product ?
+       </div>
+       <div class="modal__crud__delete__btn__group">
+         <div class="modal__crud__delete-btn delete-btn-cancel" onclick="closeCURDRemovelModal()">Hủy</div>
+         <div class="modal__crud__delete-btn delete-btn-ok" onclick="clickConfirmModal()">Xóa</div>
+       </div>
+     </div>
+     <div class="modal__crud__delete__success"> 
+     </div>
+    <!-- Modal delete -->
+
+    <!-- Modal edit -->
+    <div class="modal__crud__edit">
+      <div class="modal__crud__edit__close" onclick="closeCURDEditModal()"><i class="far fa-times-circle"></i></div>
+      <div class="modal__crud__edit__file">
+        <div class="modal__crud__edit__file__title">Sửa Chi Tiết Sản Phẩm</div>
+        <div class="modal__crud__edit__file__input__box">
+          <!-- <label for="file-img" class="file-label-crud">
+            <div class="modal__crud__edit__file__input__icon"><i class="fas fa-images"></i></div>
+            Chọn File Ảnh</label> -->
+          <!-- Phần thêm ảnh lên Host -->
+          <div class="modal__crud__edit__file__input">
+            <input type="hidden" role="uploadcare-uploader" name="my_file_input" id="input_edit_file"/>
+          </div>
+          <!-- Phần thêm ảnh lên Host -->
+          <div class="crud__edit__file__img__box">
+            <div class="crud__edit__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__edit__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__edit__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__crud__edit__info">
+        <div class="modal__crud__edit__info__item">
+          <label for="ID">ID</label>
+          <input type="text" placeholder="ID" class="inputID" readonly>
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Name">Tên Sản Phẩm</label>
+          <input type="text" placeholder="Name" class="inputName">
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Ram-Rom">Ram</label>
+          <input type="number" placeholder="Ram" id="Ram">
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Ram-Rom">Rom</label>
+          <input type="number" placeholder="Rom" id="Rom">
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Category">Chọn Hãng</label>
+          <select class="modal__edit__input__cate" required="required"></select>
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Listed">Giá Niêm Yết</label>
+          <input type="number" placeholder="Listed" id="Listed">
+        </div>
+        <div class="modal__crud__edit__info__item">
+          <label for="Price">Giá Bán</label>
+          <input type="number" placeholder="Price" id="Price">
+        </div>
+      </div>
+      <div class="modal__crud__edit__save" onclick="saveEditAction()">Lưu Chỉnh Sửa</div>
+    </div>
+    <!-- Modal edit -->
+
+    <!-- Modal add -->
+    <div class="modal__crud__add">
+      <div class="modal__crud__add__close" onclick="closeCurdAddModal()"><i class="far fa-times-circle"></i></div>
+      <div class="modal__crud__add__file">
+        <div class="modal__crud__add__file__title">Thêm Sản Phẩm</div>
+        <div class="modal__crud__add__file__input__box">
+          <!-- <label for="file-img" class="file-label-crud-add">
+            <div class="modal__crud__add__file__input__icon"><i class="fas fa-images"></i></div>
+            Chọn File Ảnh
+          </label>
+          <input type="file" id="file-img"> -->
+          <div class="modal__crud__add__file__input">
+            <input type="hidden" role="uploadcare-uploader" name="my_file_input" id="input_add_file" />
+          </div>
+          <div class="crud__add__file__img__box">
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__crud__add__info">
+        <div class="modal__crud__add__info__item">
+          <label for="ID">ID</label>
+          <input type="text" placeholder="ID" class="inputID" readonly>
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Name">Tên Sản Phẩm</label>
+          <input type="text" placeholder="Name" class="inputName">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Ram-Rom">Ram</label>
+          <input type="number" placeholder="Ram/Rom" id="Ram">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Ram-Rom">Rom</label>
+          <input type="number" placeholder="Rom" id="Rom">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Category">Chọn hãng</label>
+          <select class="modal__edit__input__cate" required="required"></select>
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Listed">Giá Niêm Yết</label>
+          <input type="number" placeholder="Listed" id="Listed">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Price">Giá Bán</label>
+          <input type="number" placeholder="Price" id="Price">
+        </div>
+      </div>
+      <div class="modal__crud__add__save" onclick="clickConfirmAddModal()">Thêm Sản Phẩm</div>
+    </div>
+    <!-- Modal add -->
+
+    <!-- Modal Alert Main -->
+      <div class="modal__alert hide">
+        <div class="modal__alert__close"><i class="fas fa-times-circle"></i></div>
+        <div class="modal__alert__content">
+          <div class="modal__alert__left"></div>
+          <div class="modal__alert__right">
+            <div class="modal__alert__right__title"></div>
+            <div class="modal__alert__right__text"></div>
+          </div>
+        </div>
+        <div class="modal__alert__process"></div>
+      </div>
+    <!-- Modal Alert Main -->
+    
+     <!-- Trang quản lí tài khoản STARTS -->
+     <div class="account__management__container section_right">
+       <div class="account__management__content__left">
+         <div class="account__management__content__left__header-group">
+           <div class="account__management__content__left__header-1">
+              <div class="account__management__content__left__header-checkAll">
+                <i class="far fa-square"></i><i class="fas fa-check check-All-Icon"></i>
+              </div>
+              <div class="account__management__content__left__header-select" id="accountHeaderSelect" onclick="addOpenUserModal()">
+                <i class="fas fa-plus-circle"></i>Thêm người dùng</div>
+              <div class="account__management__content__left__header-select" >
+                Sắp xếp<i class="fas fa-caret-down"></i>
+                <div class="account__select__item-2">
+                  <div>
+                    Theo tên
+                    <div class="account__management__content__left__header-select account__selected__contain">
+                      <div class="account__selected__increase" onclick="sortUsersTable('username',true)">A-Z</div>
+                      <div class="account__selected__increase" onclick="sortUsersTable('username',false)">Z-A</div>
+                    </div>
+                  </div>
+                  <div>Theo ngày tạo
+                    <div class="account__management__content__left__header-select account__selected__contain">
+                      <div class="account__selected__increase" onclick="sortUsersTable('ngayTao',true)">Tăng dần</div>
+                      <div class="account__selected__increase" onclick="sortUsersTable('ngayTao',false)">Giảm dần</div>
+                    </div>
+                  </div>
+
+                  <div>Theo trạng thái
+                    <div class="account__management__content__left__header-select account__selected__contain">
+                      <div class="account__selected__increase" onclick="sortUsersTable('isActive',false)">Hoạt động trước</div>
+                      <div class="account__selected__increase" onclick="sortUsersTable('isActive',true)">Bị chặn trước</div>
+                    </div>
+                  </div>
+                  <div>Theo chức vụ
+                    <div class="account__management__content__left__header-select account__selected__contain">
+                      <div class="account__selected__increase" onclick="sortUsersTable('isAdmin',true)">User trước</div>
+                      <div class="account__selected__increase" onclick="sortUsersTable('isAdmin',false)">Admin trước</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+
+          <div class="account__management__content__left__header-search">
+            <input type="text" placeholder="Tìm kiếm..." id="inputUserKeyword">
+            <i class="fas fa-search"></i>
+          </div>
+         </div>
+         <div class="account__management__content__left__body">
+          
+          <!-- <div class="account__management__content__left__body__item">
+            <div class="account__item__checkbox">
+              <label for="checkbox-account"><i class="fas fa-check"></i></label>
+              <input type="checkbox" id="checkbox-account">
+            </div>
+            <div class="account__item__icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="account__item__avatar">
+              <img src="./admin_img/admin-avatar-chatbox.-2jpg.jpg" alt="">
+            </div>
+            <div class="account__item__info">
+              <h4>Trương Thành Đại</h4>
+              <p>thanhdai11733621@gmail.com</p>
+            </div>
+            <div class="account__item__registration_date">
+              <p>Ngày Đăng Kí</p>
+              4/12/2021
+            </div>
+            <div class="account__item__status">
+              <p>Trạng Thái</p>
+              <span>Bị Chặn</span>
+            </div>
+            <div class="account__item__drop-down">
+              <i class="fas fa-ellipsis-v"></i>
+              <div class="account__item__drop-down-modal">
+                <div class="account__item__drop-down-modal-item">
+                  <i class="fas fa-adjust"></i>Xem thông tin
+                </div>
+                <div class="account__item__drop-down-modal-item">
+                  <i class="fas fa-adjust"></i>Sửa thông tin
+                </div>
+                <div class="account__item__drop-down-modal-item">
+                  <i class="fas fa-adjust"></i>Xóa người dùng
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+       </div>
+       <div class="account__management__content__right">
+         <div class="account__management__content__right__header">
+           Tất cả tài khoản <p>0</p>
+         </div>
+         <div class="account__management__content__right__body">
+            <div class="account__right__body__item account__right__body__item__1">
+             Admin <p>0</p>
+            </div>
+            <div class="account__right__body__item account__right__body__item__2">
+              Người dùng <p>0</p>
+            </div>
+            <div class="account__right__body__item account__right__body__item__3">
+              Đang hoạt động <p>0</p>
+            </div>
+            <div class="account__right__body__item account__right__body__item__4">
+              Bị chặn <p>0</p>
+            </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="modal__crud__add">
+      <div class="modal__crud__add__close" onclick="closeCurdAddModal()"><i class="far fa-times-circle"></i></div>
+      <div class="modal__crud__add__file">
+        <div class="modal__crud__add__file__title">Thêm Sản Phẩm</div>
+        <div class="modal__crud__add__file__input__box">
+          <!-- <label for="file-img" class="file-label-crud-add">
+            <div class="modal__crud__add__file__input__icon"><i class="fas fa-images"></i></div>
+            Chọn File Ảnh
+          </label>
+          <input type="file" id="file-img"> -->
+          <div class="modal__crud__add__file__input">
+            <input type="hidden" role="uploadcare-uploader" name="my_file_input" id="input_add_file" />
+          </div>
+          <div class="crud__add__file__img__box">
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="crud__add__file__img">
+              <img src="" alt="">
+              <p>No Image</p>
+              <span class="img__remove__btn"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__crud__add__info">
+        <div class="modal__crud__add__info__item">
+          <label for="ID">ID</label>
+          <input type="text" placeholder="ID" class="inputID" readonly>
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Name">Tên Sản Phẩm</label>
+          <input type="text" placeholder="Name" class="inputName">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Ram-Rom">Ram</label>
+          <input type="number" placeholder="Ram/Rom" id="Ram">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Ram-Rom">Rom</label>
+          <input type="number" placeholder="Rom" id="Rom">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Category">Chọn hãng</label>
+          <select class="modal__edit__input__cate" required="required"></select>
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Listed">Giá Niêm Yết</label>
+          <input type="number" placeholder="Listed" id="Listed">
+        </div>
+        <div class="modal__crud__add__info__item">
+          <label for="Price">Giá Bán</label>
+          <input type="number" placeholder="Price" id="Price">
+        </div>
+      </div>
+      <div class="modal__crud__add__save" onclick="clickConfirmAddModal()">Thêm Sản Phẩm</div>
+    </div>
+
+    <div class="modal__user__show">
+    </div>
+
+    <div class="modal__user__delete">
+      <!-- <div class="modal__user__delete-close" onclick="closeCURDRemovelModal()"><i class="far fa-times-circle"></i></div>
+      <div class="modal__user__delete__icon"><i class="far fa-trash-alt"></i></div>
+      <div class="modal__user__delete__title">
+        You are about to delete a product ?
+      </div>
+      <div class="modal__user__delete__btn__group">
+        <div class="modal__user__delete-btn delete-btn-cancel" onclick="closeCURDRemovelModal()">Hủy</div>
+        <div class="modal__user__delete-btn delete-btn-ok" onclick="clickConfirmModal()">Xóa</div>
+      </div>
+      </div>
+      <div class="modal__user__delete__success"> -->
+    </div>
+
+     <!-- Trang quản lí tài khoản ENDS -->
+
+     <!-- Trang liên hệ STARTS -->
+     <div class="contact__container section_right">
+       Đây là trang liên hệ
+     </div>
+     <!-- Trang liên hệ ENDS -->
+   </div>
+  </div>
+ </div>
+ <div class="bg__modal__box"></div>
+ <div class="open__chat__box__admin"><i class="fab fa-rocketchat"></i></div>
+ <div class="chat__box__admin">
+   <div class="chat__box__admin__header">
+     <div class="chat__box__admin__header__avatar"><i class="fas fa-user-plus"></i></div>
+     <div class="chat__box__admin__header__name">
+       Mayra Sibley
+      <p><i class="fas fa-circle"></i>Active</p>
+     </div>
+     <div class="chat__box__admin__header__close"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="chat__box__admin__body">
+      <div class="chat__box__admin__body__item chat__box__admin__body__item-1">
+       <div class="chat__box__admin__body__item__info">
+         <div class="chat__box__item__avatar">
+          <img src="./admin_img/admin-avatar-chatbox.jpg" alt="">
+         </div>
+         <div class="chat__box__item__name">
+           Mayra Sibley
+           <p>2 Hours</p>
+         </div>
+       </div>
+       <div class="chat__box__admin__body__item__message">Hi there, I'm Jesse and you?</div>
+      </div>
+      <div class="chat__box__admin__body__item chat__box__admin__body__item-2">
+        <div class="chat__box__admin__body__item__info">
+          <div class="chat__box__item__avatar">
+           <img src="./admin_img/admin-avatar-chatbox.-2jpg.jpg" alt="">
+          </div>
+          <div class="chat__box__item__name">
+            You
+            <p>3 minutes</p>
+          </div>
+        </div>
+        <div class="chat__box__admin__body__item__message">My name is Anne Clarc.</div>
+       </div>
+       <div class="chat__box__admin__body__item chat__box__admin__body__item-3">
+        <div class="chat__box__admin__body__item__info">
+          <div class="chat__box__item__avatar">
+           <img src="./admin_img/admin-avatar-chatbox.jpg" alt="">
+          </div>
+          <div class="chat__box__item__name">
+            Mayra Sibley
+            <p>40 seconds</p>
+          </div>
+        </div>
+        <div class="chat__box__admin__body__item__message">Nice to meet you Anne. How can i help you?</div>
+       </div>
+    </div>
+    <div class="chat__box__admin__send__group">
+      <input type="text" name="" id="" class="chat__box__admin__send__input" placeholder="Send a messages...">
+      <div class="chat__box__admin__send__icon__box">
+        <div class="chat__box__admin__send__icon__box__item"><i class="fas fa-paperclip"></i></div>
+        <div class="chat__box__admin__send__icon__box__item"><i class="fas fa-grin-alt"></i></div>
+        <div class="chat__box__admin__send__icon__box__item"><i class="fas fa-microphone"></i></div>
+        <div class="chat__box__admin__send__icon__box__item send__icon__box__item-4"><i class="fas fa-paper-plane"></i></div>
+      </div>
+    </div>
+ </div>
+ <!-- <div class="responsive-error">
+   Xin lỗi, Hiện tại Trang Quản Lý chưa hỗ trợ trên Tablet và Mobile 
+ </div> -->
+</body>
+<!-- Link JS -->
+<!-- MAIN JS FILE -->
+<script src="./src/js/class.js"></script>
+<script src="./src/js/randomOrder.js"></script>
+<script src="./src/js/data.js"></script>
+<script src="./src/js/main_config.js"></script>
+<script src="./src/js/main_eventHandle.js"></script>
+<!-- MAIN JS FILE -->
+
+<!-- Script upload image to host -->
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+<script src="uploadFile.js"></script>
+<!-- Script upload image to host -->
+
+<!-- DASHBOARD JS FILE -->
+<script src="./src/js/dash_board/displayHandle.js"></script>
+<!-- DASHBOARD JS FILE -->
+
+<!-- PRODUCT PAGE JS FILE -->
+<script src="./src/js/product_page/config.js"></script>
+<script src="./src/js/product_page/renderFunction.js"></script>
+<script src="./src/js/product_page/eventHandle.js"></script>
+<!-- PRODUCT PAGE JS FILE -->
+
+<!-- ORDER PAGE JS FILE -->
+<script src="./src/js/order_page/order_config.js"></script>
+<script src="./src/js/order_page/renderOrder.js"></script>
+<script src="./src/js/order_page/order_event.js"></script>
+<!-- ORDER PAGE JS FILE -->
+
+<!-- USER CONTROL PAGE  -->
+<script src="./src/js/user_control/config.js"></script>
+<script src="./src/js/user_control/renderUser.js"></script>
+<script src="./src/js/user_control/eventHandle.js"></script>
+<!-- USER CONTROL PAGE  -->
+
+<script src="./Admin.js"></script>
+
+<!-- STATUS PAGE -->
+<script src="./src/js/status_page/config.js"></script>
+<script src="./src/js/status_page/renderStatus.js"></script>
+<script src="./src/js/status_page/eventHandle.js"></script>
+<!-- STATUS PAGE -->
+
+</html>

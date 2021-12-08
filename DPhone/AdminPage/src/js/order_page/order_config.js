@@ -1,0 +1,1 @@
+const monthOrderList = document.querySelector('#product-select');
