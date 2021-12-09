@@ -18,19 +18,19 @@ else if (userId !== null) {
 
 const dphoneIconHome = document.querySelector('.product__header____logo');
 dphoneIconHome.addEventListener('click', function () {
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/ProductPage";
 })
 
 const orderViewBtn = document.querySelector('.product__header__icon__user');
 orderViewBtn.addEventListener('click', function () {
-    window.location.href = "../ProductPage/ViewOrderPage.html";
+    window.location.href = "../ProductPage/ViewOrderPage";
 })
 
 const logOutBtn = document.querySelectorAll('.product__header__icon__log-out');
 logOutBtn.forEach(item => {
     item.addEventListener('click', function () {
         user.logout();
-        window.location.href = "../ProductPage/ProductPage.html";
+        window.location.href = "../ProductPage/ProductPage";
     })
 })
 
@@ -92,12 +92,12 @@ loginBtnConfirm.addEventListener('click', function (e) {
 //--------------------------------------------------------------------
 
 registerAccountBtn.addEventListener('click', function () {
-    window.location.href = "../SignUpPage/sign-up.html";
+    window.location.href = "../SignUpPage/sign-up";
 })
 
 const viewAdminBtn = document.querySelector('.product__header__icon__admin');
 viewAdminBtn.addEventListener('click', function () {
-    window.location.href = "../AdminPage/Admin.html";
+    window.location.href = "../AdminPage/Admin";
 })
 
 

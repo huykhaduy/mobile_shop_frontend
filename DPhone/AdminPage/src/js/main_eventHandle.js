@@ -87,7 +87,7 @@ function adminLogout() {
 }
 
 function toProductPage() {
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/ProductPage";
 }
 
 function checkIsAdmin() {

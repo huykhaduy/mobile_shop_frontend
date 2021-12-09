@@ -1,6 +1,6 @@
 // KIỂM TRA QUYỀN CỦA NGƯỜI DÙNG
 if (!user.checkLoginId()) {
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/ProductPage";
 }
 
 renderPageListOrder();
