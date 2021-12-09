@@ -803,9 +803,9 @@ input.product__header__search__input {
 
 .product__content__filter {
   flex-basis: 30%;
-  box-shadow: 0 0 10px 0 #7047ee47;
+  box-shadow: 0 0 10px 0 #8080801f;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 2px;
   background-color: transparent;
   height: 100%;
 }
@@ -886,7 +886,7 @@ input.product__header__search__input {
 .product__content__filter__price__item label p {
   font-size: 13px;
   font-weight: 500;
-  color: #80bdff;
+  color: #2c3e50;
   transition: 0.3s;
 }
 
@@ -1911,7 +1911,10 @@ h3.product__modal__details__name {
     flex-basis: 100%;
   }
   .product__content {
-    margin-bottom: 50px;
+    margin: 50px 0;
+  }
+  .product__content__filter {
+    box-shadow: none;
   }
   .product__content__featured__item__left {
     flex-basis: 15%;
@@ -2559,7 +2562,7 @@ h3.product__modal__details__name {
   color: #111;
 }
 
-.login-form-input-item{
+.login-form-input-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2577,11 +2580,11 @@ span.err-message-login {
   font-size: 12px;
   color: red;
   white-space: nowrap;
-  display:none;
+  display: none;
 }
 
-span.err-message-login.show{
-  display:block;
+span.err-message-login.show {
+  display: block;
 }
 
 .err-message-username.hide {
@@ -2600,8 +2603,6 @@ span.err-message-login.show{
   border-radius: 40px;
   min-width: 280px;
 }
-
-
 
 .login-form-input-item input::placeholder {
   font-size: 11px;

@@ -3479,7 +3479,7 @@ select.modal__show___input__cate:focus {
   display: none;
 }
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
   .admin__container,
   .open__chat__box__admin {
     display: none;
@@ -3497,4 +3497,4 @@ select.modal__show___input__cate:focus {
     color: var(--red-color);
     padding: 0 20px;
   }
-} */
+}
