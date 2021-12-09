@@ -104,7 +104,7 @@ function renderShowRecentOrder() {
     }
     let lastOrder = list[list.length - 1];
     var html = ''
-    if (Date.now() - lastOrder.orderTime < 3000) {
+    if (Math.abs(Date.now() - lastOrder.orderTime) < 3000) {
         html = `
         <div class="view__order__content__desc">
             <div class="view__order__content__desc-item">
