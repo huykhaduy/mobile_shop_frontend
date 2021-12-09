@@ -590,11 +590,12 @@ function showNofications(iconName, title, description, isSuccess) {
 
 function clickToBuyModalCart() {
     const loginId = user.checkLoginId();
-    order.makeOrder(cart.getCartList(loginId), loginId, Date.now());
-    renderCartModal();
-    window.location.href ="./ViewOrderPage.html";
+    if (cart.getCartList(loginId).length > 0) {
+        order.makeOrder(cart.getCartList(loginId), loginId, Date.now());
+        renderCartModal();
+        window.location.href = "./ViewOrderPage.html";
+    }
 }
-
 
 
 function countProduct() {
