@@ -168,6 +168,11 @@ function clearSearchProduct() {
   inputSearchProductKeyWord = '';
 }
 
+function imgEditError(obj) {
+  obj.src = './img/default.png';
+  inputProductImageBackGround[i].classList.add('hide');
+}
+
 
 function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);

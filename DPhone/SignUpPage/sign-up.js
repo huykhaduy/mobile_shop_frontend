@@ -14,12 +14,12 @@ signUpClickBtn.addEventListener('click', function () {
     if (checkInputName() && checkInputUserName() && checkInputPassword() && checkInputRePassword() && checkInputEmail() &&checkInputPhone() && checkInputAddress()) {
         user.addUser(inputUsername.value, inputPassword.value, inputEmail.value, inputPhoneNumber.value, inputUname.value, inputAddress.value, false);
         user.login(inputUsername.value, inputPassword.value);
-        window.location.href = "../ProductPage/ProductPage";
+        window.location.href = "../ProductPage/ProductPage.html";
     }
 })
 
 backtoHomeBnt.addEventListener("click", function () {
-    window.location.href = "../ProductPage/ProductPage";
+    window.location.href = "../ProductPage/ProductPage.html";
 })
 
 function checkInputName() {

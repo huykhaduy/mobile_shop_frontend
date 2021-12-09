@@ -242,7 +242,7 @@ function renderProductDetail(self) {
             const userid = user.checkLoginId();
             const productId = parseInt(openModalDetails.getAttribute('value'));
             order.addBuyNowOrder(productId, parseInt(amout.textContent), null, userid, Date.now());
-            window.location.href ="./ViewOrderPage";
+            window.location.href ="./ViewOrderPage.html";
         })
     })
     displayProductType(showChoice);
@@ -593,12 +593,12 @@ function clickToBuyModalCart() {
     if (cart.getCartList(loginId).length > 0) {
         order.makeOrder(cart.getCartList(loginId), loginId, Date.now());
         renderCartModal();
-        window.location.href = "./ViewOrderPage";
+        window.location.href = "./ViewOrderPage.html";
     }
 }
 
 function clickToViewOrder() {
-    window.location.href = "./ViewOrderPage";
+    window.location.href = "./ViewOrderPage.html";
 }
 
 function countProduct() {
