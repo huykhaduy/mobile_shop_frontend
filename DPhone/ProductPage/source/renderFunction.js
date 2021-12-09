@@ -295,7 +295,7 @@ function renderCartModal() {
                 <div class="product__modal__cart__content__checkout__item checkout__button" onclick="clickToBuyModalCart()">
                     <i class="fas fa-lock"></i> <h5>THANH TOÁN</h5>
                 </div>
-                <div class="product__modal__cart__content__viewcart__item viewcart__item">
+                <div class="product__modal__cart__content__viewcart__item viewcart__item" onclick="clickToViewOrder()">
                     <i class="fas fa-shopping-cart"></i> <h5>XEM HÓA ĐƠN</h5>
                 </div>
             </div>
@@ -597,6 +597,9 @@ function clickToBuyModalCart() {
     }
 }
 
+function clickToViewOrder() {
+    window.location.href = "./ViewOrderPage.html";
+}
 
 function countProduct() {
     // const arrBrand = ['samsung', 'xiaomi', 'apple', 'vivo', 'oppo', 'vsmart'];
