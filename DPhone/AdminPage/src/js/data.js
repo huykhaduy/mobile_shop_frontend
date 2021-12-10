@@ -78,11 +78,11 @@ if (order.getOrders().length == 0) {
 //Menu brand list
 const arrBrand = ['samsung', 'xiaomi', 'apple', 'vivo', 'oppo', 'vsmart'];
 //Menu price list
-const arrPriceList = [{ text: 'DƯỚI 2500$', price_min: 0, price_max: 2500 },
-    { text: 'TỪ 2500$ TỚI 5000$', price_min: 2500, price_max: 5000 },
-    { text: 'TỪ 5000$ TỚI 10000$', price_min: 5000, price_max: 10000 },
-    { text: 'TỪ 10000$ TỚI 20000$', price_min: 10000, price_max: 20000 },
-    { text: 'TRÊN 20000$', price_min: 20000, price_max: data.getMaxProductPrice() },
+const arrPriceList = [{ text: 'DƯỚI 2TR', price_min: 0, price_max: 2000000 },
+    { text: 'TỪ 2TR TỚI 4TR', price_min: 2000000, price_max: 4000000 },
+    { text: 'TỪ 4TR TỚI 8TR', price_min: 4000000, price_max: 8000000 },
+    { text: 'TỪ 8TR TỚI 15TR', price_min: 8000000, price_max: 15000000 },
+    { text: 'TRÊN 15TR', price_min: 15000000, price_max: data.getMaxProductPrice() },
 ];
 
 //Menu ram list
