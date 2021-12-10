@@ -96,7 +96,7 @@ function renderProductV2(list) {
         html += `
               <span>(${e.rate})</span>
               </div>
-              <div class="product__item__info__price">${e.price} <span><s>${e.price_old}</s></span></div>
+              <div class="product__item__info__price">${money.vnd(e.price)} <span><s>${money.vnd(e.price_old)}</s></span></div>
               <div class="product__item__info__text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium deleniti quas qui
                     dolore quasi unde voluptas at, doloremque...
@@ -491,7 +491,7 @@ function renderFeaturedProduct() {
                         }
                     }		 
 		html +=		`</div>
-					<div class="product__content__featured__item__right__price">$${money.vnd(item.price)} <span><s>$${money.vnd(item.price_old)}</s></span></div>
+					<div class="product__content__featured__item__right__price">${money.vnd(item.price)} <span><s>${money.vnd(item.price_old)}</s></span></div>
 				</div>
 			</a>`;
     })
