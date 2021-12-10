@@ -202,3 +202,4 @@ function getContentOrderFromStorage() {
   myString += `];`
   return myString;
 }
+
