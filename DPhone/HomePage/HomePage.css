@@ -1,0 +1,1369 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&family=Lobster+Two:wght@400;700&family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Roboto";
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --samsung-color: #1c1c1c; /*Galaxy Z Fold3 Đen*/
+  --xiaomi-color: #8aaccf; /*Xiaomi Mi 11 5G Xanh Dương*/
+  --apple-color: #c01829; /*I Phone 13 ProMax Đỏ*/
+  --vivo-color: #c6f1d5; /*Vivo X70 Pro Xanh*/
+  --oppo-color: #3b566b; /*Oppo Find X3 Pro Xanh Đen*/
+  --vsmart-color: #751789; /*Vsmart Active 3 Tím*/
+  --main-color: #4777f4; /*Màu chính cho toàn web*/
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/*----------------------------------------------------- Header STARTS -----------------------------------------------------*/
+
+/* Header Menu STARTS */
+.header__container {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.video-background.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#features {
+  margin-top: 100px;
+}
+
+.header__menu__logo {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  padding: 10px 100px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.header__menu__logo.active {
+  padding: 0 100px;
+  background-color: #fff;
+  box-shadow: 0px 1px 10px 0px #80808070;
+}
+
+.header__logo {
+  display: flex;
+  font-size: 30px;
+  line-height: inherit;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__logo.active {
+  color: #0f1d46;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu > ul {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu > ul > li > a {
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 20px;
+  letter-spacing: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 70px;
+  z-index: 1;
+  color: #fff;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.header__menu ul > li > a.active {
+  color: var(--main-color);
+  opacity: 1;
+}
+
+.header__menu > ul > li > a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.order__btn {
+  background-color: #fff;
+  border-radius: 2px;
+  text-transform: uppercase;
+  width: 170px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.order__btn p {
+  color: #0f083a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0;
+  transition: 0.3s;
+}
+
+.order__btn:hover p {
+  color: #fff;
+  z-index: 1000;
+}
+
+.order__btn span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #0f083a;
+  top: var(--yhover);
+  left: var(--xhover);
+  transition: width 0.5s, height 0.5s;
+  transform: translate(-50%, -50%);
+}
+
+.order__btn:hover span,
+.order__btn.active:hover span {
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.order__btn__header.active {
+  background-color: var(--main-color);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.order__btn__header.active p {
+  color: #fff;
+}
+
+.open__menu__sidebar {
+  display: none;
+}
+
+.open__menu__sidebar svg {
+  z-index: -1;
+}
+/* Header Menu ENDS */
+
+/* Header Menu Sidebar STARTS */
+.header__menu__sidebar {
+  position: fixed;
+  top: var(--height_menu);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 90%;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  padding: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px 0px #80808045;
+  transition: all 0.3s;
+  height: 0;
+  overflow: hidden;
+}
+
+.header__menu__sidebar.active {
+  padding: 20px 30px;
+  height: 300px;
+}
+
+.header__menu__sidebar ul li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header__menu__sidebar ul li a {
+  display: block;
+  margin: 10px 30px;
+  color: var(--main-color);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.header__menu__sidebar ul li a:hover {
+  color: var(--main-color);
+}
+
+.header__menu__sidebar ul li a svg {
+  position: absolute;
+  left: 0;
+}
+
+.order__btn__sidebar {
+  width: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .header__menu__logo {
+    padding: 10px 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header__menu {
+    display: none;
+  }
+  .open__menu__sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .open__menu__sidebar.active {
+    color: #0f1d46;
+  }
+  .header__menu__logo {
+    padding: 25px 50px;
+  }
+  .header__menu__logo.active {
+    padding: 20px 50px;
+  }
+  .header__content__left {
+    margin-top: -150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__menu__sidebar {
+    display: none;
+  }
+}
+
+/* Header Menu Sidebar ENDS */
+
+/* Header Content STARTS */
+.header__content {
+  width: 100%;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__content__left__right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 100px;
+}
+
+.header__content__left {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px;
+  gap: 25px;
+}
+
+.header__content__right {
+  height: 0;
+  display: none;
+}
+
+.header__content__left h1 {
+  font-size: 3.1vw;
+  font-weight: 600;
+  color: #fff;
+}
+
+.header__content__left__p {
+  color: #fff;
+}
+
+.header__content__right {
+  flex-basis: 50%;
+}
+
+.header__content__right__img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__content__right__img img {
+  animation: animate_img 3s forwards infinite;
+}
+
+@keyframes animate_img {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .header__content__left__right {
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: center;
+  }
+  .header__content__left,
+  .header__content__right {
+    flex-basis: 100%;
+    padding: 0;
+  }
+  .header__content__left h1 {
+    font-size: 30px;
+  }
+  .header__content__right__img {
+    display: none;
+  }
+  .header__container {
+    height: 100vh;
+  }
+  /* div#features {
+        margin-top: 100px;
+    } */
+}
+
+@media (max-width: 600px) {
+  .header__content__right__img img {
+    width: 100%;
+    min-width: 300px;
+  }
+  .header__content__left {
+    margin-top: -100px;
+  }
+}
+/* Header Content ENDS */
+
+/*----------------------------------------------------- Header ENDS -----------------------------------------------------*/
+
+/*----------------------------------------------------- Content STARTS -----------------------------------------------------*/
+/* Feature STARTS */
+#feature {
+  margin-top: 100px;
+}
+
+.title__content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title__content__button {
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 2px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  background-color: rgba(71, 119, 244, 0.2);
+  color: var(--main-color);
+}
+
+.title__content__button__samsung {
+  background-color: #77777754;
+  color: #111;
+}
+
+.title__content__button__apple {
+  background-color: #ff00002e;
+  color: red;
+}
+
+.title__content__button__xiaomi {
+  background-color: rgba(71, 119, 244, 0.2);
+  color: var(--main-color);
+}
+
+.title__content__button__vivo {
+  background-color: #c89ecc52;
+  color: #bf44ca;
+}
+
+.title__content__button__oppo {
+  background-color: #27f8ea2e;
+  color: #58d1c9;
+}
+
+.title__content__button__vsmart {
+  background-color: #77777754;
+  color: #111;
+}
+
+.title__content__text__1 {
+  font-size: 3vw;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+
+.feature__content {
+  width: 100%;
+}
+
+.feature__content__item__box {
+  width: 100%;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature__content__item {
+  flex-basis: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px 0 #80808030;
+  padding: 20px 30px;
+  transition: 0.3s;
+  border-radius: 5px;
+  gap: 15px;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.feature__content__item:hover {
+  box-shadow: 0px 4px 10px 0 #808080c2;
+  transform: translateY(-10px);
+}
+
+.feature__content__item__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 30%;
+}
+
+.feature__content__item__icon svg {
+  font-size: 40px;
+  line-height: 80px;
+}
+
+.feature__content__item__icon__1,
+.feature__content__item__button__1 {
+  background-color: rgba(255, 76, 76, 0.1);
+  color: #ff4c4c;
+  transition: 0.3s;
+}
+
+.feature__content__item__button__1:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+.feature__content__item__icon__2,
+.feature__content__item__button__2 {
+  background-color: rgba(0, 153, 229, 0.1);
+  color: #0099e5;
+  transition: 0.3s;
+}
+
+.feature__content__item__button__2:hover {
+  background-color: #0099e5;
+  color: #fff;
+}
+
+.feature__content__item__icon__3,
+.feature__content__item__button__3 {
+  background-color: rgba(255, 221, 0, 0.1);
+  color: #ffdd00;
+  transition: 0.3s;
+}
+
+.feature__content__item__button__3:hover {
+  background-color: #ffdd00;
+  color: #fff;
+}
+
+.feature__content__item__icon__4,
+.feature__content__item__button__4 {
+  background-color: rgba(10, 191, 83, 0.1);
+  color: #0abf53;
+  transition: 0.3s;
+}
+
+.feature__content__item__button__4:hover {
+  background-color: #0abf53;
+  color: #fff;
+}
+
+.feature__content__item__title {
+  font-weight: 600;
+  line-height: 1.7;
+  color: #0f1d46;
+  letter-spacing: -0.01em;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.feature__content__item__text {
+  text-align: center;
+  color: #777;
+  padding: 0 10px;
+  font-size: 15px;
+}
+
+.feature__content__item__button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* Feature ENDS */
+
+/* About STARTS */
+div#about {
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.about__content {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+}
+
+.about__content__left {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title__content__container__samsung,
+.title__content__container__xiaomi,
+.title__content__container__apple,
+.title__content__container__vivo,
+.title__content__container__oppo,
+.title__content__container__vsmart {
+  align-items: flex-start;
+}
+
+.title__content__text__1__samsung,
+.title__content__text__1__xiaomi,
+.title__content__text__1__apple,
+.title__content__text__1__vivo,
+.title__content__text__1__oppo,
+.title__content__text__1__vsmart {
+  text-align: start;
+}
+
+.title__content__text__2 {
+  text-align: start;
+  margin: 30px 0;
+}
+
+.about__content__samsung {
+  padding: 100px;
+}
+
+.about__content__xiaomi {
+  flex-direction: row-reverse;
+}
+
+.about__content__vivo {
+  flex-direction: row-reverse;
+}
+
+.about__content__vsmart {
+  flex-direction: row-reverse;
+}
+
+.about__content__left__check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.about__content__left__check__item {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  align-items: center;
+}
+
+.about__content__left__check__icon {
+  background-color: #111;
+  color: #fff;
+  font-size: 10px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 15px;
+  min-width: 25px;
+}
+
+.about__content__left__check__text {
+  font-size: 16px;
+  color: #111;
+  font-weight: 300;
+}
+
+.about__content__right {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__content__right__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__container__xiaomi,
+.about__container__apple,
+.about__container__vivo,
+.about__container__oppo,
+.about__container__vsmart {
+  margin-bottom: 150px;
+}
+
+.about__content__left__check__icon__xiaomi {
+  background-color: var(--main-color);
+}
+.about__content__left__check__icon__apple {
+  background-color: #ed1822;
+}
+.about__content__left__check__icon__vivo {
+  background-color: #c89ecc;
+}
+.about__content__left__check__icon__oppo {
+  background-color: #58d1c9;
+}
+
+@media (max-width: 1200px) {
+  .feature__content__item__box {
+    padding: 50px 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .feature__content__item__box {
+    flex-wrap: wrap;
+  }
+  .feature__content__item {
+    flex-basis: 48%;
+    margin-bottom: 40px;
+  }
+  .title__content__text__1 {
+    font-size: 30px;
+  }
+  .about__content {
+    flex-wrap: wrap;
+    padding: 0 50px;
+  }
+  .about__content__samsung {
+    padding: 150px 50px;
+  }
+  .about__content__left,
+  .about__content__right {
+    flex-basis: 100%;
+  }
+  .about__content__right {
+    margin-top: 50px;
+    width: 100%;
+  }
+  #products {
+    margin-top: -100px;
+  }
+  .about__content__right__img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .feature__content__item {
+    flex-basis: 100%;
+  }
+  .about__content__right__img img {
+    width: 90%;
+    min-width: 270px;
+  }
+  .title__content__text__1 {
+    font-size: 25px;
+  }
+  .about__content {
+    padding: 0 20px;
+  }
+  .about__container__xiaomi,
+  .about__container__apple,
+  .about__container__vivo,
+  .about__container__oppo,
+  .about__container__vsmart {
+    margin-bottom: 50px;
+  }
+  .about__content__samsung {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .feature__content__item__box {
+    padding: 50px 20px;
+  }
+  .title__content__text__2,
+  .about__content__left__check__text {
+    font-size: 14px;
+  }
+  .header__menu__logo {
+    padding: 25px 20px;
+  }
+  .header__menu__logo.active,
+  .header__content__left__right {
+    padding: 20px;
+  }
+  .header__logo,
+  .open__menu__sidebar {
+    font-size: 25px;
+  }
+  .header__content__left h1 {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+  .title__content__text__1 {
+    padding: 0 20px;
+    font-size: 25px;
+  }
+}
+/* About ENDS */
+
+/* FAQ STARTS */
+.faq__content {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.title__content__container__faq__1 {
+  align-items: flex-start;
+}
+
+.faq__content__left,
+.faq__content__right {
+  padding: 0 50px;
+}
+
+.faq__question__title {
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: #111;
+  font-size: 17px;
+  font-weight: 900;
+  transition: 0.3s;
+}
+
+.faq__question__title.active {
+  color: var(--main-color);
+}
+
+.faq__question__title.active svg {
+  transform: rotate(180deg);
+}
+
+.faq__question__title svg {
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.faq__question__title:hover {
+  color: var(--main-color);
+}
+
+.faq__question__answer {
+  width: 100%;
+  height: 0px;
+  font-size: 15px;
+  color: #777;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.faq__question__answer.active {
+  height: 70px;
+}
+
+.title__content__container__faq__2 {
+  align-items: flex-end;
+}
+
+.title__content__text__2__faq {
+  text-align: end;
+}
+
+.faq__content__right__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(128 128 128 / 18%) 0px 0px 10px 0px;
+  margin-top: 50px;
+}
+
+.faq__content__right__input input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  padding: 0 20px;
+  outline: none;
+  border-right: 1px solid #80808075;
+}
+
+@media (max-width: 992px) {
+  .faq__content {
+    padding: 0 25px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  .faq__content__left,
+  .faq__content__right {
+    padding: 0 25px;
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq__content {
+    padding: 0 10px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  .faq__content__left,
+  .faq__content__right {
+    padding: 0 10px;
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq__content__right__input {
+    margin-top: 20px;
+  }
+  .faq__content__left,
+  .faq__content__right {
+    padding: 0 10px;
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+}
+/* FAQ ENDS */
+
+.scroll__to__top {
+  background-color: var(--main-color);
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 50%;
+  line-height: 45px;
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.scroll__to__top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*----------------------------------------------------- Content ENDS -----------------------------------------------------*/
+
+/*----------------------------------------------------- Footer STARTS -----------------------------------------------------*/
+.footer__container {
+  padding: 50px 100px;
+  background-color: #1f2024;
+}
+
+.footer__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ffffff30;
+}
+
+.footer__content__left,
+.footer__content__right {
+  padding: 0;
+  flex-basis: 49%;
+}
+
+.footer__content__left__logo {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 900;
+}
+
+.footer__content__left__text {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.footer__content__left__icon {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.footer__content__left__icon__item a {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 2px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.footer__content__left__icon__item a:hover {
+  background-color: var(--main-color);
+}
+
+.footer__content__right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__content__right__item {
+  flex-basis: 33.333333%;
+}
+
+.footer__content__right__item__title {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer__content__right__item p a {
+  color: #ffffff8f;
+  display: inline-block;
+  margin: 5px 0;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.footer__content__right__item p a:hover {
+  color: #fff;
+}
+
+.footer__ends {
+  margin-top: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .footer__content {
+    flex-wrap: wrap;
+  }
+  .footer__content__left,
+  .footer__content__right {
+    flex-basis: 100%;
+  }
+  .footer__content__left {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__content {
+    padding-bottom: 0;
+  }
+  .footer__content__right {
+    flex-wrap: wrap;
+  }
+  .footer__content__right__item {
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer__container {
+    padding: 50px 20px;
+  }
+}
+
+/*----------------------------------------------------- Footer ENDS -----------------------------------------------------*/
+
+.video-bg-dots-group {
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.video-bg-dot {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  font-size: 12px;
+  color: #fff;
+}
+
+.video-bg-dot.active svg {
+  color: #111;
+}
+
+.video-bg-dot::before,
+.video-bg-dot::after {
+  content: "";
+  width: 150%;
+  height: 150%;
+  background-color: #f2f2f21f;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: dots-scale 3s ease-in-out infinite;
+}
+
+.video-bg-dot::after {
+  animation-delay: 0.7s;
+}
+
+@keyframes dots-scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.video-nav-btn {
+  position: absolute;
+  z-index: 1000;
+  width: 47px;
+  height: 47px;
+  background-color: #fff;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #fff;
+  transition: 0.3s;
+}
+
+.video-nav-btn:hover {
+  color: #fff;
+  background-color: #111;
+}
+
+.video-next-btn {
+  right: -50px;
+}
+
+.video-prev-btn {
+  left: -50px;
+}
+
+.header__container:hover .video-next-btn {
+  right: 20px;
+}
+.header__container:hover .video-prev-btn {
+  left: 20px;
+}
+
+/* AOS Animate */
+.feature__content__item.aos {
+  animation: aos-feature-content-item 1s forwards;
+}
+.feature__content__item__2.aos {
+  animation-delay: 0.2s;
+}
+.feature__content__item__3.aos {
+  animation-delay: 0.4s;
+}
+.feature__content__item__4.aos {
+  animation-delay: 0.6s;
+}
+
+@keyframes aos-feature-content-item {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Samsung */
+.about__content__samsung .about__content__left {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.about__content__samsung .about__content__right {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.about__content__samsung .about__content__left.aos,
+.about__content__samsung .about__content__right.aos {
+  animation: aos-samsung-left-right 1s forwards;
+}
+
+@keyframes aos-samsung-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Xiaomi */
+.about__content__xiaomi .about__content__left {
+  transform: scale(0);
+  opacity: 0;
+}
+.about__content__xiaomi .about__content__right {
+  transform: scale(0);
+  opacity: 0;
+}
+.about__content__xiaomi .about__content__left.aos,
+.about__content__xiaomi .about__content__right.aos {
+  animation: aos-xiaomi-left-right 1s forwards;
+}
+
+@keyframes aos-xiaomi-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apple */
+.about__content__apple .about__content__left {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.about__content__apple .about__content__right {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.about__content__apple .about__content__left.aos,
+.about__content__apple .about__content__right.aos {
+  animation: aos-apple-left-right 1s forwards;
+}
+
+@keyframes aos-apple-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Vivo */
+.about__content__vivo .about__content__left {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.about__content__vivo .about__content__right {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.about__content__vivo .about__content__left.aos,
+.about__content__vivo .about__content__right.aos {
+  animation: aos-vivo-left-right 1s forwards;
+}
+
+.about__content__vivo .about__content__left.aos {
+  animation-delay: 0.3s;
+}
+
+@keyframes aos-vivo-left-right {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Oppo */
+.about__content__oppo .about__content__left {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.about__content__oppo .about__content__right {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.about__content__oppo .about__content__left.aos,
+.about__content__oppo .about__content__right.aos {
+  animation: aos-oppo-left-right 1s forwards;
+}
+
+@keyframes aos-oppo-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Vsmart */
+.about__content__vsmart .about__content__left {
+  transform: scale(0);
+  opacity: 0;
+}
+.about__content__vsmart .about__content__right {
+  transform: scale(0);
+  opacity: 0;
+}
+.about__content__vsmart .about__content__left.aos,
+.about__content__vsmart .about__content__right.aos {
+  animation: aos-vsmart-left-right 1s forwards;
+}
+
+@keyframes aos-vsmart-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* FAQ */
+.faq__content__left {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.faq__content__right {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.faq__content__left.aos,
+.faq__content__right.aos {
+  animation: faq-left-right 1s forwards;
+}
+
+@keyframes faq-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* AOS Animate */
