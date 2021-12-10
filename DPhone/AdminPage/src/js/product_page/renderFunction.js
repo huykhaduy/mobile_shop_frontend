@@ -173,6 +173,16 @@ function imgEditError(obj) {
   inputProductImageBackGround[i].classList.add('hide');
 }
 
+function addImageErrorListener(obj) {
+  const allImg = document.querySelectorAll('.crud__add__file__img img');
+  allImg.forEach((item,i) => {
+    item.addEventListener('error', function () {
+      this.src = './img/default.png';
+      inputProductImageBackGround[i].classList.add('hide');
+    })
+  })
+}
+
 
 function capitalize(s) {
   return s[0].toUpperCase() + s.slice(1);
