@@ -16,7 +16,7 @@ const listProducts = [
 
     new Product('Oppo Reno5', 46000000, 44900000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-13/Product-13-Bạc.jpg', '../ProductPage/img/Img-Product-13/Product-13-Đen.jpg'], 6, 128, 'Oppo'),
     new Product('Oppo Reno6 5G', 48300000, 46700000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-14/Product-14-Bạc.jpg', '../ProductPage/img/Img-Product-14/Product-14-Đen.jpg'], 16, 512, 'Oppo'),
-    new Product('Oppo Reno4 Pro', 34500000, 33000000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-15/Product-15-Đen.jpg', '../ProductPage/img/Img-Product-15/Product-15-Trắng.jpg'], 8, 128, 'Oppo'),
+    new Product('Oppo Reno4 Pro', 34500000, 33000000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-15/Product-15-Den.jpg', '../ProductPage/img/Img-Product-15/Product-15-Trắng.jpg'], 8, 128, 'Oppo'),
     new Product('Oppo Find X3 Pro 5G', 24500000, 19500000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-16/Product-16-Đen.jpg', '../ProductPage/img/Img-Product-16/Product-16-Xanh%20đen.jpg'], 8, 256, 'Oppo'),
     new Product('Oppo A74', 3150000, 2860000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-17/Product-17-Đen.jpg', '../ProductPage/img/Img-Product-17/Product-17-Xanh%20dương.jpg'], 3, 32, 'Oppo'),
     new Product('Oppo A15s', 1500000, 1300000, ['black', 'white', 'blue'], ['../ProductPage/img/Img-Product-18/Product-18-Đen.jpg', '../ProductPage/img/Img-Product-18/Product-18-Xanh%20dương.jpg'], 2, 16, 'Oppo'),
