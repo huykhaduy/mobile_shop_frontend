@@ -168,16 +168,12 @@ function clearSearchProduct() {
   inputSearchProductKeyWord = '';
 }
 
-// function imgEditError(obj) {
-//   obj.src = './img/default.png';
-//   inputProductImageBackGround[i].classList.add('hide');
-// }
 
 function addImageErrorListener(obj) {
   const allImg = document.querySelectorAll('.crud__add__file__img img');
   allImg.forEach((item,i) => {
     item.addEventListener('error', function () {
-      this.src = './img/default.png';
+      this.src = '';
       inputProductImageBackGround[i].classList.add('hide');
     })
   })
