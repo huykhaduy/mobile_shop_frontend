@@ -13,7 +13,7 @@ Có thể dùng console để xem danh sách:
 - Giỏ hàng, xem đơn hàng đã đặt
 - Thực hiện thống kê, tìm kiếm, thêm xóa sửa sản phẩm, người dùng
 
-<i> Lý do khi bật websites console log sẽ log ra các đơn hàng bằng cách random các sản phẩm </i>
+<i> Lý do khi bật websites console log sẽ log ra các đơn hàng bằng cách random các sản phẩm </i><br>
  <b> Xóa dữ liệu toàn bộ localStorage: localStorage.clear()</b>
 
 
