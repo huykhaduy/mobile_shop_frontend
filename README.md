@@ -8,7 +8,7 @@ Có thể dùng console để xem danh sách:
   - order.getOrders()
   - cart.getCartList(userid) vói userid là mã id người dùng;
  <br>
-<b>Các chức năng chính</b>
+<b>Các chức năng chính: </b><br>
 - Xem sản phẩm, quản lý sản phẩm bằng chức năng admin <br>
 - Đăng kí, đăng nhập tài khoản <br>
 - Giỏ hàng, xem đơn hàng đã đặt <br>
