@@ -3,10 +3,11 @@
 Live demo: <a href="https://huykhaduy.github.io">Link</a><br>
 Tài khoản admin: admin/admin
 Có thể dùng console để xem danh sách:
-  + user.getUsers()
-  + data.getProducts()
-  + order.getOrders()
-  + cart.getCartList(userid) vói userid là mã id người dùng;
+  - user.getUsers()
+  - data.getProducts()
+  - order.getOrders()
+  - cart.getCartList(userid) vói userid là mã id người dùng;
+ <br>
 <b>Các chức năng chính</b>
 - Xem sản phẩm, quản lý sản phẩm bằng chức năng admin
 - Đăng kí, đăng nhập tài khoản
